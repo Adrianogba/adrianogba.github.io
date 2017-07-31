@@ -1,2 +1,2 @@
-# <a href=“https://www.adrianogba.github.io/“>adrianogba.github.io</a>
+# <a href=“http://www.adrianogba.github.io/“>adrianogba.github.io</a>
 
