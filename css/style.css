@@ -2354,6 +2354,7 @@ a.callbacks_nav.callbacks1_nav.prev {
 	}
 	.banner-image-w3layouts img {
 		width: 180px;
+        bottom: 0%;
 		right: 6%;
 	}
 	.agile_banner_info {
@@ -2462,8 +2463,10 @@ a.callbacks_nav.callbacks1_nav.prev {
 	}
 }
 @media(max-width:375px){
+
 	.banner-image-w3layouts img {
 		width: 145px;
+        
 		right: 6%;
 	}
 	.about-left-w3ls h5 {
