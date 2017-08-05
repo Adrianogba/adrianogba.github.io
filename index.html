@@ -13,10 +13,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link rel="stylesheet" href="css/lightbox.css" type="text/css" media="all" /><!--gallery-popup-css-->
 <link href="css/popuo-box.css" rel="stylesheet" type="text/css" media="all" /><!-- Pop-up -->
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
-<!--fonts-->
-<link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,600,700" rel="stylesheet">
-<link href="//fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
-<!--//fonts-->
+<link href="css/snackbar.css" rel="stylesheet" type="text/css" media="all" />
+
 
 </head>
 <body>
@@ -50,18 +48,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<h2><span>Olá! Meu nome é<br></span>Adriano Martins</h2>
 				<div id="typed-strings" class="agileits_w3layouts_strings">
 						<p>Faço <i>Aplicativos <i class="fa fa-android" aria-hidden="true" style="color: #7dc460"></i> e <i class="fa fa-apple" aria-hidden="true" style="color: #666"></i></i></p>
-						<p>Faço <i>Sistemas Web e Websites</i></p>
-						<p>Sou <i>Desenvolvedor de Software</i></p>
+						<p>Faço <i>Sistemas Desktop e Web</i></p>
+						<p>Sou <i>Engenheiro de Software</i></p>
 					</div>
 				<span id="typed" style="white-space:pre;"></span>
-				<p class="banner-p-w3ls">Bem vindo(a) a minha página pessoal. Siga mais abaixo para encontrar informações sobre meu perfíl, experiência e escolaridade.</p>
+				<p class="banner-p-w3ls" style="text-shadow: 1px 1px 1px #000">Bem vind@ a minha página pessoal. Meu perfíl profissional segue abaixo.</p>
 			</div>
 			<div class="w3_agileits_social_media">
 				<ul>
-					<li><a href="https://www.facebook.com/Adrianogba" class="wthree_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-					<li><a href="https://www.linkedin.com/in/adriano-martins-de-pontes-b1b2a420/" class="wthree_twitter"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-					<li><a href="#" class="wthree_dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-					<li><a href="#" class="wthree_behance"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+					<li><a href="https://www.facebook.com/Adrianogba" style="background: #3a589e"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+					<li><a href="https://www.linkedin.com/in/adriano-martins-de-pontes-b1b2a420/"  style="background: #0081bc"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+
+					
+
 				</ul>
 			</div>
 			<div class="banner-image-w3layouts">
@@ -70,20 +69,46 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	</div>
 <!-- //banner -->
 <!-- about -->
-<div class="about" id="about" style="left: 50%">
+<div align="justify" class="about" id="about" style="margin: 0 auto;">
+
+		<div class="col-md-3 person-info-agileits-w3layouts" ></div>
 		<div class="col-md-6 person-info-agileits-w3layouts" >
 		<h3 class="w3_head w3_head1">Sobre mim </h3>
-		<p><span>Olá! Meu nome é Adriano Martins. </span>Sou desenvolvedor de software, com experiencia em sistemas Web e Mobile. Sou formando em Sistemas de Informação (Bach.) pela Universidade Federal da Paraíba, onde participei de projetos de extenção e monitoria de disciplinas.</p>
+		<p>Sou desenvolvedor de software, com experiencia em sistemas Web e Mobile. Sou formando em Sistemas de Informação (Bach.) pela Universidade Federal da Paraíba, onde participei de projetos de extenção e monitoria de disciplinas.</p>
 			<ul>
-				<li><span>Nome</span>: Adriano Martins de Pontes</li>
-				<li><span>Idade</span>: 24 anos</li>
-				<li><span>Experiência</span>: +4 anos</li>
-				<li><span>Email</span>: <a href="mailto:ampontes93@gmail.com">ampontes93@gmail.com</a></li>
-				<li><span>Telefone</span>: +55 83 9 9612-4792</li>
-				
-				<li><span>Residência</span>: João Pessoa, Paraíba</li>
-				<li><a href="#" class="botton-w3ls">Download Resumé (CV)</a>
-				<li><a href="#" class="botton-w3ls">Baixar Currículo</a>	
+			<div align="center">
+
+				<table style="width:100%">
+				  <tr>
+				    <td><li><span>Nome :</span></li></td>
+				   	<td><li>Adriano Martins de Pontes</li></td>
+				  </tr>
+				  <tr>
+				    <td><li><span>Idade :</span></li></td>
+				    <td><li>24 anos</li></td>
+				  </tr>
+				  <tr>
+				    <td><li><span>Experiência :</span></li></td>
+				    <td><li>+4 anos</li></td>
+				  </tr>
+				  <tr>
+				    <td><li><span>Email :</span></li></td>
+				    <td><li><a href="mailto:ampontes93@gmail.com">ampontes93@gmail.com</a></li></td>
+				  </tr>
+				  <tr>
+				    <td><li><span>Telefone : </span></li></td>
+				    <td><li>+55 83 9 9612-4792</li></td>
+				  </tr>
+				  <tr>
+				    <td><li><span>Residência :</span></li></td>
+				    <td><li>João Pessoa, Paraíba</li></td>
+				  </tr>
+
+				</table>
+					<div id="snackbar">Em andamento...</div>
+					<li><a onclick="myFunction()" class="botton-w3ls">Download Resumé (CV)</a>
+					<li><a href="https://docs.google.com/document/d/1g_m7Ub-ioADsoMbL0V-jbSV9rECDMmIfb3xgLbzDxhE/edit" class="botton-w3ls">Baixar Currículo</a>
+				</div>	
 				</li>
 			</ul>
 		</div>
@@ -132,7 +157,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<h6>Espanhol <span>Básico</span> </h6>
 
 						</div>
-						<div class="col-md-4 bar-grids  bargrids-center">
+						<div class="col-md-4 bar-grids bargrids-center">
 						<br/>
 							<h4><span class="glyphicon glyphicon-briefcase"></span> Habilidades Profissionais</h4>
 							<h6>Trabalho em Equipe </h6>
@@ -235,26 +260,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <div class="contact-info">
  <div class="container">
-	<div class="col-md-12 contact-grids">
-	<br/>
-		<h5>Redes Sociais</h5>
+	<div class="col-md-6 contact-grids">
+		<h5>Minhas Redes Sociais</h5>
 		<div class="w3_agileits_social_media-footer">
 			<ul>
-				<li><a href="#" class="wthree_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-				<li><a href="#" class="wthree_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-				<li><a href="#" class="wthree_dribbble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-				<li><a href="#" class="wthree_behance"><i class="fa fa-behance" aria-hidden="true"></i></a></li>
+				<li><a href="https://www.facebook.com/Adrianogba" style="background: #3a589e"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+				<li><a href="https://www.linkedin.com/in/adriano-martins-de-pontes-b1b2a420/"  style="background: #0081bc"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
 			</ul>
 		</div>
 	</div>
-	<div class="col-md-4 contact-grids contact-mid">
-		<h5>Mais informações para contato</h5>
+	<div class="col-md-6 contact-grids contact-mid">
+		<h5>Dados para Contato</h5>
 		<ul>
 			<li><i class="fa fa-phone" aria-hidden="true"></i>+55 83 9 9612 4792</li>
 			<li><i class="fa fa-map-marker" aria-hidden="true"></i>João pessoa, Paraíba, Brasil</li>
 			<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:ampontes93@gmail.com">ampontes93@gmail.com</a></li>
 		</ul>
 	</div>
+	
 	<div class="clearfix"></div>
 </div>
 </div>
@@ -390,6 +413,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		$().UItoTop({ easingType: 'easeOutQuart' });
 		});
 	</script>
+	<script>
+		function myFunction() {
+		    var x = document.getElementById("snackbar")
+		    x.className = "show";
+		    setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+		}
+		</script>
 	
 	<div class="arr-w3ls">
 	<a href="#home" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
