@@ -32,7 +32,7 @@ h2,h3,h4,h5,h6{
 	margin:0;
 	font-family: 'Josefin Sans', sans-serif;
     font-weight: 600;
-}	
+}
 p{
 	margin:0;
 }
@@ -174,8 +174,8 @@ p.banner-p-w3ls {
 	position: absolute;
 }
 
-.mobile-nav-button .mobile-nav-button__line--2 { 
-	display: none;	
+.mobile-nav-button .mobile-nav-button__line--2 {
+	display: none;
 }
 
 .mobile-nav-button .mobile-nav-button__line--3 {
@@ -259,12 +259,12 @@ ul.dropdown-menu.agile_short_dropdown > li > a:hover{
 	transition: 0.4s ease;
 }
 
-.mobile-menu ul li a:hover,.mobile-menu ul li.active a { 
-	color: #fff; 
+.mobile-menu ul li a:hover,.mobile-menu ul li.active a {
+	color: #fff;
 }
 
-.mobile-menu ul li a:hover:after,.mobile-menu ul li.active a:after { 
-	right: 0; 
+.mobile-menu ul li a:hover:after,.mobile-menu ul li.active a:after {
+	right: 0;
 }
 li.dropdown.act a.w3_icons_act {
     background: #0e0e0e;
@@ -821,7 +821,7 @@ h3.w3_head.w3_head1 span {
 }
 
 /*--//services-section--*/
-/*-- mid --*/ 
+/*-- mid --*/
 .mid-w3layouts{
 	text-align:center;
 }
@@ -853,8 +853,8 @@ section.mid-w3layouts a {
 section.mid-w3layouts a:hover {
     background: #ecb731;
 }
-/*-- mid --*/ 
-/*-- skills --*/ 
+/*-- mid --*/
+/*-- skills --*/
 .skills-agileinfo {
     background: url(../images/skills.jpg)no-repeat 0px 0px;
     background-size: cover;
@@ -893,7 +893,7 @@ section.mid-w3layouts a:hover {
 .prgs-w3agile-last {
     margin-bottom: 0!important;
 }
-.progress-bar { 
+.progress-bar {
     background-color: #0086fe;
 }
 .bar-grids h6 {
@@ -961,19 +961,19 @@ section.mid-w3layouts a:hover {
 }
 a.agilebtn {
 	font-size: 1em;
-	color: #fff; 
+	color: #fff;
 	background: #00BCD4;
 	padding: 0.7em 2em;
-	display: inline-block; 
+	display: inline-block;
 	outline:none;
-	margin-top: 1em; 
+	margin-top: 1em;
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
 	-o-transition: all 0.5s;
 	-ms-transition: all 0.5s;
 	transition: all 0.5s;
 	position: relative;
-} 
+}
 .agilebtn::before{
 	content: '';
 	position: absolute;
@@ -1041,7 +1041,7 @@ a.agilebtn {
     text-align:center;
 /* IE<9 support hack */
 }
-/* chrome bug fix causing overlay-mask to not appear 
+/* chrome bug fix causing overlay-mask to not appear
 @media screen and (-webkit-min-device-pixel-ratio:0) {
 #cm-overlay-mask
 {
@@ -1049,7 +1049,7 @@ a.agilebtn {
 }
 #cm-overlay-mask::-webkit-scrollbar
 {
-    width:0px; 
+    width:0px;
 }}*/
 #cm-wrap
 {
@@ -1061,7 +1061,7 @@ a.agilebtn {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
-    
+
 }
 #cm-wrap .cm-box,
 #cm-wrap .cm-scale
@@ -1157,7 +1157,7 @@ a.agilebtn {
 }
 /*lightbox*/
 
-/*-- //gallery --*/ 
+/*-- //gallery --*/
 /*--Contact --*/
 .contact-agileits-w3layouts p {
     color: #eee;
@@ -1241,15 +1241,15 @@ a.agilebtn {
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: rgba(255, 255, 255, 0.65); 
+   color: rgba(255, 255, 255, 0.65);
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: rgba(255, 255, 255, 0.65);  
+   color: rgba(255, 255, 255, 0.65);
 }
 
-:-ms-input-placeholder {  
-   color: rgba(255, 255, 255, 0.65);  
+:-ms-input-placeholder {
+   color: rgba(255, 255, 255, 0.65);
 }
 /*--//placeholder-color--*/
 
@@ -1633,7 +1633,7 @@ a.callbacks_nav.callbacks1_nav.prev {
 /*--responsive--*/
 @media(max-width:1600px){
 
-	
+
 }
 @media(max-width:1440px){
 	.banner {
@@ -2123,7 +2123,7 @@ a.callbacks_nav.callbacks1_nav.prev {
 	}
 }
 @media(max-width:767px){
-	
+
 }
 @media(max-width:736px){
 	.banner {
@@ -2466,7 +2466,7 @@ a.callbacks_nav.callbacks1_nav.prev {
 
 	.banner-image-w3layouts img {
 		width: 145px;
-        
+
 		right: 6%;
 	}
 	.about-left-w3ls h5 {
@@ -2511,4 +2511,3 @@ a.callbacks_nav.callbacks1_nav.prev {
 	}
 }
 /*--responsive--*/
-
