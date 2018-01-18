@@ -11,13 +11,18 @@
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <div id="snackbar">Em breve...</div>
+
 </head>
-<body>
-<div class="navbar-fixed">
+<body id="inicio">
+<div class="navbar-fixed" id="fixedNavWrapper">
   <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img src="images/logo-eu.jpg" class="logo-eu"></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Navbar Link</a></li>
+        <li><a href="#!">Início</a></li>
+        <li><a href="#portifolio">Portifólio</a></li>
+        <li><a href="#">Contato</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
@@ -29,7 +34,9 @@
             </div>
 
       </div>
-        <li><a href="#">Navbar Link</a></li>
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Portifólio</a></li>
+        <li><a href="#">Contato</a></li>
 
         <li><footer><h2>123</h2></footer></li>
       </ul>
@@ -48,7 +55,7 @@
   
 
   <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
+    <div class="container" >
       <br><br>
 
       <h3 class="header center blue-text">Adriano Martins<br>Desenvolvedor de Software</h3>
@@ -56,34 +63,35 @@
         <h5 class="header col s12 light">Olá. Seguem abaixo meu currículo e informações sobre minha qualificação e .</h5>
       </div>
       <div class="row center">
-        <a href="#" class="btn-large waves-effect waves-light light-blue col s12 m6">Baixar Currículum (Português)</a>
-        <a href="#" class="btn-large waves-effect waves-light light-blue col s12 m6">Download Resume (English)</a>
+        <a href="https://docs.google.com/document/export?format=pdf&id=1g_m7Ub-ioADsoMbL0V-jbSV9rECDMmIfb3xgLbzDxhE&token=AC4w5ViXSdJEmrTXkNKWK5kZOLtV9KhPxQ%3A1516124438825&includes_info_params=true" class="btn-large waves-effect waves-light light-blue col s12 m6">Baixar Currículum (Português)</a>
+        <a onclick="Toast()" class="btn-large waves-effect waves-light light-blue col s12 m6">Download Resume (English)</a>
       </div>
       <br><br>
 
     </div>
   </div>
-<hr>
-<h4 class="header center grey-text">Portifólio<br>- Conheça alguns de meus projetos -</h4>
+<hr >
+<h4 id="portifolio"class="header center grey-text">Portifólio<br>- Conheça alguns de meus projetos -</h4>
   <div class="container">
     <div class="section">
 
       <!--   Icon Section   -->
       <div class="row">
         <div class="col s12 m4">
-          <div class="card z-depth-3">
+          <div class="card sticky-action z-depth-3">
 		    <div class="card-image waves-effect waves-block waves-light">
 		      <img class="activator img-card " src="images/sindico-logo.png">
 		    </div>
 		    <div class="card-content">
-		      <span class="card-title activator grey-text text-darken-4">Apps do Síndico Amigo<i class="material-icons right">more_vert</i></span>
+		      <span class="card-title activator text-darken-4">Apps do Síndico Amigo<i class="material-icons right">more_vert</i></span>
 		      <p>Sistema de Gestão Condominial para Android e iOS</p>
 		    </div>
 		    <div class="card-reveal">
 		      <span class="card-title grey-text text-darken-4">Síndico Amigo<i class="material-icons right">close</i></span>
 		      <p>Here is some more information about this product that is only revealed once clicked on.</p>
 		    </div>
-		    <div class="card-action">
+		    <div class="card-action" >
+
                 <a href="https://play.google.com/store/apps/details?id=br.com.pbsoft.sindicoamigo"><img src="images/badge-android-store.png" class="badge"></a>
                 <a href="https://itunes.apple.com/br/app/sindico-amigo/id1158607474?mt=8"><img src="images/badge-ios-store.png" class="badge"></a>
               </div>
@@ -91,7 +99,7 @@
 		</div>
 
         <div class="col s12 m4">
-          <div class="card z-depth-3">
+          <div class="card sticky-action z-depth-3">
 		    <div class="card-image waves-effect waves-block waves-light">
 		      <img class="activator img-card" src="images/correios-logo.png">
 		    </div>
@@ -104,7 +112,7 @@
 		      <p>Here is some more information about this product that is only revealed once clicked on.</p>
 		    </div>
 		    <div class="card-action">
-                <a >Github (Em breve)</a>
+                <a onclick="Toast()"><i class="fa fa-lg fa-github"></i> Github </a>
               </div>
 		  </div>
         </div>
@@ -148,10 +156,10 @@
       <i class="large material-icons">message</i>
     </a>
     <ul>
-      <li class="waves-effect waves-light fa-lg"><a href="#!"><i class="fa fa-facebook"></i></a></li>
-      <li class="waves-effect waves-light fa-lg"><a href="#!"><i class="fa fa-linkedin"></i></a></li>
-      <li class="waves-effect waves-light fa-lg"><a href="#!"><i class="fa fa-whatsapp"></i></a></li>
-      <li class="waves-effect waves-light fa-lg"><a href="#!"><i class="fa fa-github"></i></a></li>
+      <li class="waves-effect waves-light fa-lg"><a href="https://m.me/adrianogba/"><i class="fa fa-facebook"></i></a></li>
+      <li class="waves-effect waves-light fa-lg"><a href="https://www.linkedin.com/in/adriano-martins-de-pontes-b1b2a420/"><i class="fa fa-linkedin"></i></a></li>
+      <li class="waves-effect waves-light fa-lg"><a href="https://api.whatsapp.com/send?phone=5583996124792"><i class="fa fa-whatsapp"></i></a></li>
+      <li class="waves-effect waves-light fa-lg"><a href="mailto:ampontes93@gmail.com"><i class="fa fa-envelope"></i></a></li>
       
 
     </ul>
@@ -161,6 +169,6 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
-
+  <script src="js/util.js"></script>
   </body>
 </html>
