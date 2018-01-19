@@ -80,3 +80,13 @@ However, delay the fade out process for 2.5 seconds */
     from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
 }
+
+
+
+/* gray icons */
+.img-soon {
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}

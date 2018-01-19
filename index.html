@@ -20,19 +20,17 @@
   <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img src="images/logo-eu.jpg" class="logo-eu"></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#">Início</a></li>
+        <li><a href="#top">Início</a></li>
         <li><a href="#portifolio" >Portifólio</a></li>
         <li><a href="#contato">Contato</a></li>
-        <li><a href="#" onclick="Toast()">English</a></li>
+
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
 
-        <li><a href="#">Início</a></li>
+        <li><a href="#top">Início</a></li>
         <li><a href="#portifolio">Portifólio</a></li>
         <li><a href="#contato">Contato</a></li>
-        <li><a href="#" onclick="Toast()">English</a></li>
-
       
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -41,7 +39,7 @@
 </div>
 
   <div class="section no-pad-bot" id="index-banner">
-    <div class="container" >
+    <div class="container" id="top">
       <br><br>
 
       <h3 class="header center blue-text">Adriano Martins<br>Desenvolvedor de Software</h3>
@@ -98,9 +96,31 @@
 		    </div>
 		    <div class="card-action">
                 
-          <a onclick="Toast()"><img src="images/badge-github.png" class="badge"></a>
+          <a onclick="Toast()"><img src="images/badge-github-em-breve.png" class="badge img-soon"></a>
               </div>
 		  </div>
+        </div>
+
+        <div class="col s12 m4">
+          <div class="card sticky-action z-depth-3">
+        <div class="card-image waves-effect waves-block waves-light">
+          <img class="activator img-card" src="images/sunfounder-car.jpg">
+        </div>
+        <div class="card-content">
+          <span class="card-title activator grey-text text-darken-4">App para Kit Raspberry Pi Smart Video Car - Sunfounder<i class="material-icons right">more_vert</i></span>
+          <p>Aplicativo para controlar o carro e sua camera sem fios.</p>
+        </div>
+        <div class="card-reveal">
+          <span class="card-title grey-text text-darken-4">App para Kit Raspberry Pi Smart Video Car V2 - Sunfounder<i class="material-icons right">close</i></span>
+          <p>Desenvolvimento de um novo App para controle do Kit Raspberry Pi Smart Video Car V2 da Sunfounder junto a publicação de seu código-fonte no GitHub. Provavelmente lançado no final de 2018.</p>
+        </div>
+        <div class="card-action">
+                
+          <a onclick="Toast()"><img src="images/badge-github-em-breve.png" class="badge img-soon"></a>
+          <a onclick="Toast()"><img src="images/badge-android-store-em-breve.png" class="badge img-soon"></a>
+
+              </div>
+      </div>
         </div>
 
       </div>
@@ -121,14 +141,24 @@
         <div class="col l3 s12">
           <h5 class="white-text" id="contato">Contato</h5>
           <ul>
-            <li><a class="white-text" href="#!">Facebook</a></li>
-            <li><a class="white-text" href="#!">Email</a></li>
-            <li><a class="white-text" href="#!">Whatsapp</a></li>
-            <li><a class="white-text" href="#!">LinkedIn</a></li>
-            <li><a class="white-text" href="#!">Github</a></li>
-            <li><a class="white-text" href="#!">Skype</a></li>
+            <li><a class="white-text" href="https://fb.com/adrianogba">Facebook</a></li>
+            <li><a class="white-text" href="mailto:ampontes93@gmail.com">Email</a></li>
+            <li><a class="white-text" href="https://api.whatsapp.com/send?phone=5583996124792"">Whatsapp</a></li>
+            <li><a class="white-text" href="https://www.linkedin.com/in/adriano-martins-de-pontes-b1b2a420/">LinkedIn</a></li>
+            <li><a class="white-text" href="https://github.com/adrianogba">Github</a></li>
+            <li><a class="white-text" href="skype:adrianogba?chat">Skype</a></li>
           </ul>
         </div>
+
+        <div class="col l3 s12">
+          <h5 class="white-text" id="contato">Idiomas deste site:</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Português</a></li>
+            <li><a class="white-text" href="#!">English </a></li>
+            <li><a class="white-text" href="#!">Deutch</a></li>
+          </ul>
+        </div>
+
       
       </div>
     </div>
@@ -142,12 +172,12 @@
       <i class="large material-icons">message</i>
     </a>
     <ul>
-      <li class="waves-effect waves-light fa-lg"><a href="https://m.me/adrianogba/"><i class="fa fa-facebook"></i></a></li>
       <li class="waves-effect waves-light fa-lg"><a href="https://www.linkedin.com/in/adriano-martins-de-pontes-b1b2a420/"><i class="fa fa-linkedin"></i></a></li>
+      <li class="waves-effect waves-light fa-lg"><a href="https://m.me/adrianogba/"><i class="fa fa-facebook"></i></a></li>
       <li class="waves-effect waves-light fa-lg"><a href="https://api.whatsapp.com/send?phone=5583996124792"><i class="fa fa-whatsapp"></i></a></li>
-      <li class="waves-effect waves-light fa-lg"><a href="mailto:ampontes93@gmail.com"><i class="fa fa-envelope"></i></a></li>
+      <li class="waves-effect waves-light fa-lg"><a href="skype:adrianogba?chat"><i class="fa fa-skype"></i></a></li>
+      <li class="waves-effect waves-light fa-lg"><a href="mailto:ampontes93@gmail.com"><i class="fa fa-envelope"></i></a></li>      
       
-
     </ul>
   </div>
 
@@ -156,5 +186,5 @@
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
   <script src="js/util.js"></script>
-</body>
+  </body>
 </html>
