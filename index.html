@@ -15,44 +15,30 @@
   <div id="snackbar">Em breve...</div>
 
 </head>
-<body id="inicio">
-<div class="navbar-fixed" id="fixedNavWrapper">
+<body>
+<div class="navbar-fixed">
   <nav class="light-blue lighten-1" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img src="images/logo-eu.jpg" class="logo-eu"></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="#!">Início</a></li>
-        <li><a href="#portifolio">Portifólio</a></li>
-        <li><a href="#">Contato</a></li>
+        <li><a href="#">Início</a></li>
+        <li><a href="#portifolio" >Portifólio</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="#" onclick="Toast()">English</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
 
-          <div class="card z-depth-2">
-            <div class="card-image">
-              <img src="https://maxcdn.icons8.com/app/uploads/2016/03/material-1-1000x563.jpg">
-              <span class="card-title">Card Title</span>
-            </div>
-
-      </div>
         <li><a href="#">Início</a></li>
-        <li><a href="#">Portifólio</a></li>
-        <li><a href="#">Contato</a></li>
+        <li><a href="#portifolio">Portifólio</a></li>
+        <li><a href="#contato">Contato</a></li>
+        <li><a href="#" onclick="Toast()">English</a></li>
 
-        <li><footer><h2>123</h2></footer></li>
+      
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
 </div>
-
-
-<div class="container" style="margin-top: 10px">
-  <div class="header center" style="font-size: 5vw; ">
-    <i class="fa fa-exclamation-triangle"></i> Página em Construção <i class="fa fa-exclamation-triangle"></i>
-  </div>
-</div><hr>
-  
-  
 
   <div class="section no-pad-bot" id="index-banner">
     <div class="container" >
@@ -60,7 +46,7 @@
 
       <h3 class="header center blue-text">Adriano Martins<br>Desenvolvedor de Software</h3>
       <div class="row center">
-        <h5 class="header col s12 light">Olá. Seguem abaixo meu currículo e informações sobre minha qualificação e .</h5>
+        <h5 class="header col s12 light">Bem-vind@ a minha página. Abaixo seguem meu Currículo/Resume, meu portifólio de Apps e experiência.</h5>
       </div>
       <div class="row center">
         <a href="https://docs.google.com/document/export?format=pdf&id=1g_m7Ub-ioADsoMbL0V-jbSV9rECDMmIfb3xgLbzDxhE&token=AC4w5ViXSdJEmrTXkNKWK5kZOLtV9KhPxQ%3A1516124438825&includes_info_params=true" class="btn-large waves-effect waves-light light-blue col s12 m6">Baixar Currículum (Português)</a>
@@ -80,7 +66,7 @@
         <div class="col s12 m4">
           <div class="card sticky-action z-depth-3">
 		    <div class="card-image waves-effect waves-block waves-light">
-		      <img class="activator img-card " src="images/sindico-logo.png">
+		      <img class="activator img-card" src="images/sindico-logo.png">
 		    </div>
 		    <div class="card-content">
 		      <span class="card-title activator text-darken-4">Apps do Síndico Amigo<i class="material-icons right">more_vert</i></span>
@@ -88,10 +74,9 @@
 		    </div>
 		    <div class="card-reveal">
 		      <span class="card-title grey-text text-darken-4">Síndico Amigo<i class="material-icons right">close</i></span>
-		      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+		      <p>O Síndico Amigo é um sistema de gestão condominial. Meu papel neste projeto foi o desenvolvimento dos Apps para Android e iOS nativos usando, respectivamente, Java e Swift.</p>
 		    </div>
 		    <div class="card-action" >
-
                 <a href="https://play.google.com/store/apps/details?id=br.com.pbsoft.sindicoamigo"><img src="images/badge-android-store.png" class="badge"></a>
                 <a href="https://itunes.apple.com/br/app/sindico-amigo/id1158607474?mt=8"><img src="images/badge-ios-store.png" class="badge"></a>
               </div>
@@ -104,15 +89,16 @@
 		      <img class="activator img-card" src="images/correios-logo.png">
 		    </div>
 		    <div class="card-content">
-		      <span class="card-title activator grey-text text-darken-4">Correios Rastreamento<i class="material-icons right">more_vert</i></span>
+		      <span class="card-title activator grey-text text-darken-4">Correios Rastreamento Facil<i class="material-icons right">more_vert</i></span>
 		      <p>Biblioteca dos correios para Android</p>
 		    </div>
 		    <div class="card-reveal">
-		      <span class="card-title grey-text text-darken-4">Correios<i class="material-icons right">close</i></span>
-		      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+		      <span class="card-title grey-text text-darken-4">Correios Rastreamento Facil<i class="material-icons right">close</i></span>
+		      <p>O Correios Rastreamento Facil é uma biblioteca que criei para simplificar as consultas dados dos correios a uma unica linha de código. Foi escrita em Java e em breve estará disponível no Github e Bintray para ser usada no Gradle de seu projeto.</p>
 		    </div>
 		    <div class="card-action">
-                <a onclick="Toast()"><i class="fa fa-lg fa-github"></i> Github </a>
+                
+          <a onclick="Toast()"><img src="images/badge-github.png" class="badge"></a>
               </div>
 		  </div>
         </div>
@@ -133,7 +119,7 @@
 
         </div>
         <div class="col l3 s12">
-          <h5 class="white-text">Contato</h5>
+          <h5 class="white-text" id="contato">Contato</h5>
           <ul>
             <li><a class="white-text" href="#!">Facebook</a></li>
             <li><a class="white-text" href="#!">Email</a></li>
@@ -170,5 +156,5 @@
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
   <script src="js/util.js"></script>
-  </body>
+</body>
 </html>
