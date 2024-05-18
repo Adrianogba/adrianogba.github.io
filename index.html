@@ -1,212 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
-  <title>Adriano Martins - Software Developer</title>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
 
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
 
-  <!-- CSS  -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    For more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
 
-  <div id="snackbar">Soon...</div>
+    This is a placeholder for base href that will be replaced by the value of
+    the `--base-href` argument provided to `flutter build`.
+  -->
+  <base href="/">
 
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Project for personal portifolio.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="personal_website">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>personal_website</title>
+  <link rel="manifest" href="manifest.json">
 </head>
 <body>
-<div class="navbar-fixed" id="fixedNavWrapper">
-  <nav class="blue lighten-1" role="navigation">
-    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo"><img src="images/logo-eu.jpg" class="logo-eu"></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#portifolio" >Portifolio</a></li>
-      </ul>
-
-      <ul id="nav-mobile" class="side-nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#portifolio">Portifolio</a></li>
-      
-      </ul>
-      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
-    </div>
-  </nav>
-</div>
-
-  <div class="section no-pad-bot" id="index-banner">
-    <div class="container" id="top">
-      <br><br>
-
-      <h3 class="header center blue-text">Adriano Martins<br>Software Developer</h3>
-      <div class="row center">
-        <h5 class="header col s12 light">Welcome to my page. Right below you will find my Currículo/Resume, my portifolio and experience.</h5>
-      </div>
-      <div class="row">
-        <a href="https://docs.google.com/document/d/1g_m7Ub-ioADsoMbL0V-jbSV9rECDMmIfb3xgLbzDxhE" class="btn-large waves-effect waves-light blue col s12 m6">Baixar Currículum (Português)</a>
-        <a href="https://docs.google.com/document/d/1ikKFMwR-qUNsP_M82vLAnedD5CrbAFtDJOqAH3WJ6Yc" class="btn-large waves-effect waves-light blue col s12 m6">Download Resume (English)</a>
-      </div>
-      <br><br>
-
-    </div>
-  </div>
-<hr >
-<h4 id="portifolio" class="header center grey-text">Portifolio<br>- Meet some of my projects -</h4>
-  <div class="container">
-    <div class="section">
-
-      <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="card sticky-action z-depth-3">
-		    <div class="card-image waves-effect waves-block waves-light">
-		      <img class="activator img-card" src="images/sindico-logo.png">
-		    </div>
-		    <div class="card-content">
-		      <span class="card-title activator text-darken-4">Síndico Amigo's Apps<i class="material-icons right">more_vert</i></span>
-		      <p>Condominial Management System for Android and iOS</p>
-		    </div>
-		    <div class="card-reveal">
-		      <span class="card-title grey-text text-darken-4">Síndico Amigo<i class="material-icons right">close</i></span>
-		      <p>The Síndico Amigo is a condominial management system. My role in this project was the development of Apps for Android and native iOS using respectively Java and Swift.</p>
-		    </div>
-		    <div class="card-action" >
-                <a href="https://play.google.com/store/apps/details?id=br.com.pbsoft.sindicoamigo"><img src="images/en/badge-android-store.png" class="badge"></a>
-                <a href="https://itunes.apple.com/br/app/sindico-amigo/id1158607474?mt=8"><img src="images/en/badge-ios-store.png" class="badge"></a>
-              </div>
-		  </div>        
-		</div>
-
-        <div class="col s12 m4">
-          <div class="card sticky-action z-depth-3">
-		    <div class="card-image waves-effect waves-block waves-light">
-		      <img class="activator img-card" src="images/correios-logo.png">
-		    </div>
-		    <div class="card-content">
-		      <span class="card-title activator grey-text text-darken-4">Correios Rastreamento Facil<i class="material-icons right">more_vert</i></span>
-		      <p>Android Correios Library</p>
-		    </div>
-		    <div class="card-reveal">
-		      <span class="card-title grey-text text-darken-4">Correios Rastreamento Facil<i class="material-icons right">close</i></span>
-		      <p>The Correios Rastreamento Facil is a library I created to simplify Correios queries to a single line of code. It was written in Java and will soon be available in Github and Bintray for use in Gradle of your project.</p>
-		    </div>
-		    <div class="card-action">
-                
-          <a onclick="Toast()"><img src="images/en/badge-github.png" class="badge img-soon"></a>
-              </div>
-		  </div>
-        </div>
-
-
-        <div class="col s12 m4">
-          <div class="card sticky-action z-depth-3">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator img-card" src="images/arduino-uno.png">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">Simple Code Samples for Arduino Sensors<i class="material-icons right">more_vert</i></span>
-          <p>Simple sample codes to use some popular sensors on a Arduino.</p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">Simple Code Samples for Arduino Sensors<i class="material-icons right">close</i></span>
-          <p>Simple sample codes to use some popular sensors on a Arduino with the circuit schematics. For now there is only a sample code for the HC-SR04 Ultrasonic Sensor but there will be more available in time.</p>
-        </div>
-        <div class="card-action">
-                
-          <a href="https://github.com/Adrianogba?utf8=%E2%9C%93&tab=repositories&q=&type=&language=c%2B%2B"><img src="images/en/badge-github.png" class="badge"></a>
-              </div>
-      </div>
-        </div>
-
-
-
-        <div class="col s12 m4">
-          <div class="card sticky-action z-depth-3">
-        <div class="card-image waves-effect waves-block waves-light">
-          <img class="activator img-card" src="images/sunfounder-car.jpg">
-        </div>
-        <div class="card-content">
-          <span class="card-title activator grey-text text-darken-4">App for Kit Raspberry Pi Smart Video Car<i class="material-icons right">more_vert</i></span>
-          <p>Application to wirelessly control the car and your camera.</p>
-        </div>
-        <div class="card-reveal">
-          <span class="card-title grey-text text-darken-4">App for Kit Raspberry Pi Smart Video Car V2 - Sunfounder<i class="material-icons right">close</i></span>
-          <p>Development of a new App to control Sunfounder's Raspberry Pi Smart Video Car Kit V2 along with publishing its source code on GitHub. Probably released in late 2018.</p>
-        </div>
-        <div class="card-action">
-                
-          <a onclick="Toast()"><img src="images/en/badge-github.png" class="badge img-soon"></a>
-          <a onclick="Toast()"><img src="images/en/badge-android-store.png" class="badge img-soon"></a>
-
-              </div>
-      </div>
-        </div>
-
-
-
-      </div>
-
-    </div>
-    <br><br>
-  </div>
-
-  <footer class="page-footer blue">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Bio</h5>
-          <p class="grey-text text-lighten-4">Hello, I've been a Mobile, Web and Desktop Systems Developer since 2014. Most of my experience is with Mobile development, but I've worked on creating Websites, Web Systems, Games, Translations, teaching and I'm always up for new challenges.</p>
-
-
-        </div>
-        <div class="col l3 s12">
-          <h5 class="white-text" id="contato">Contact</h5>
-          <ul>
-            <li><a class="white-text" href="https://fb.com/adrianogba">Facebook</a></li>
-            <li><a class="white-text" href="mailto:ampontes93@gmail.com">Email</a></li>
-            <li><a class="white-text" href="https://api.whatsapp.com/send?phone=5583996124792"">Whatsapp</a></li>
-            <li><a class="white-text" href="https://www.linkedin.com/in/adrianogba/">LinkedIn</a></li>
-            <li><a class="white-text" href="https://github.com/adrianogba">Github</a></li>
-            <li><a class="white-text" href="skype:adrianogba?chat">Skype</a></li>
-          </ul>
-        </div>
-
-        <div class="col l3 s12">
-          <h5 class="white-text" id="contato">Idiomas deste site:</h5>
-          <ul>
-            
-            <li><a class="white-text" href="#!">English </a></li>
-            <li><a class="white-text" href="#!">Português (Em breve...)</a></li>
-            <li><a class="white-text" href="#!">Deutch (Bald...)</a></li>
-          </ul>
-        </div>
-
-      
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-      Copyright © 2018 Adriano Martins. All rights reserved.</div>
-    </div>
-  </footer>
-<div class="fixed-action-btn  toolbar">
-    <a class="btn-floating btn-large blue">
-      <i class="large material-icons">message</i>
-    </a>
-    <ul>
-      <li class="waves-effect waves-light fa-lg"><a href="https://www.linkedin.com/in/adriano-martins-de-pontes-b1b2a420/"><i class="fa fa-linkedin"></i></a></li>
-      <li class="waves-effect waves-light fa-lg"><a href="https://m.me/adrianogba/"><i class="fa fa-facebook"></i></a></li>
-      <li class="waves-effect waves-light fa-lg"><a href="https://api.whatsapp.com/send?phone=5583996124792"><i class="fa fa-whatsapp"></i></a></li>
-      <li class="waves-effect waves-light fa-lg"><a href="skype:adrianogba?chat"><i class="fa fa-skype"></i></a></li>
-      <li class="waves-effect waves-light fa-lg"><a href="mailto:ampontes93@gmail.com"><i class="fa fa-envelope"></i></a></li>      
-      
-    </ul>
-  </div>
-
-  <!--  Scripts-->
-  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/util.js"></script>
-  </body>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
 </html>
