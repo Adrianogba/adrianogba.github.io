@@ -135,7 +135,7 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para d
 
 ## 👨‍💻 Autor
 
-Adriano GBA - [LinkedIn](https://www.linkedin.com/in/adrianogba/) - [GitHub](https://github.com/adrianogba)
+Adriano Pontes - [LinkedIn](https://www.linkedin.com/in/adrianogba/) - [GitHub](https://github.com/adrianogba)
 
 ---
 
