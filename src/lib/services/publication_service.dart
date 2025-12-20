@@ -6,11 +6,11 @@ class PublicationService {
   Future<List<PublicationModel>> getPublications() async {
     // Simulando uma chamada de API ou banco de dados
     await Future.delayed(const Duration(milliseconds: 300));
-    
+
     // Obter o idioma atual
     final languageProvider = LanguageProvider();
     final currentLanguage = languageProvider.currentLanguage;
-    
+
     // Retornar as publicações de acordo com o idioma
     if (currentLanguage == AppLanguage.german) {
       return _getGermanPublications();
@@ -22,7 +22,7 @@ class PublicationService {
       return _getPortuguesePublications();
     }
   }
-  
+
   /// Retorna publicações em português
   List<PublicationModel> _getPortuguesePublications() {
     return [
@@ -52,11 +52,12 @@ class PublicationService {
         description: 'Estudo qualitativo sobre a perspectiva de profissionais da indústria em relação à modelagem e testes de software.',
         journal: 'V Workshop de Iniciação Científica em Sistemas de Informação',
         year: '2018',
-        url: 'https://www.researchgate.net/publication/327732020_Modelagem_e_testes_de_software_na_perspectiva_de_profissionais_da_industria_Um_estudo_qualitativo',
+        url:
+            'https://www.researchgate.net/publication/327732020_Modelagem_e_testes_de_software_na_perspectiva_de_profissionais_da_industria_Um_estudo_qualitativo',
       ),
     ];
   }
-  
+
   /// Retorna publicações em inglês
   List<PublicationModel> _getEnglishPublications() {
     return [
@@ -76,7 +77,7 @@ class PublicationService {
       ),
     ];
   }
-  
+
   /// Retorna publicações em espanhol
   List<PublicationModel> _getSpanishPublications() {
     return [
@@ -96,7 +97,7 @@ class PublicationService {
       ),
     ];
   }
-  
+
   /// Retorna publicações em alemão
   List<PublicationModel> _getGermanPublications() {
     return [

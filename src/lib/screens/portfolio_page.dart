@@ -99,7 +99,12 @@ class _PortfolioPageState extends State<PortfolioPage> {
           ? Padding(
               // Ajustar posição do botão para não sobrepor a barra flutuante
               padding: const EdgeInsets.only(bottom: 80),
-              child: FloatingActionButton(onPressed: _scrollToTop, mini: true, tooltip: AppLocalizations(Provider.of<LanguageProvider>(context).currentLanguage).get('backToTop'), child: const Icon(Icons.arrow_upward)),
+              child: FloatingActionButton(
+                onPressed: _scrollToTop,
+                mini: true,
+                tooltip: AppLocalizations(Provider.of<LanguageProvider>(context).currentLanguage).get('backToTop'),
+                child: const Icon(Icons.arrow_upward),
+              ),
             )
           : null,
       body: Stack(
@@ -124,7 +129,9 @@ class _PortfolioPageState extends State<PortfolioPage> {
                           IconButton(
                             icon: Icon(isDarkMode ? Icons.light_mode : Icons.dark_mode, color: isDarkMode ? Colors.lightBlue : Colors.blue),
                             onPressed: () => themeProvider.toggleTheme(),
-                            tooltip: isDarkMode ? AppLocalizations(Provider.of<LanguageProvider>(context).currentLanguage).get('lightMode') : AppLocalizations(Provider.of<LanguageProvider>(context).currentLanguage).get('darkMode'),
+                            tooltip: isDarkMode
+                                ? AppLocalizations(Provider.of<LanguageProvider>(context).currentLanguage).get('lightMode')
+                                : AppLocalizations(Provider.of<LanguageProvider>(context).currentLanguage).get('darkMode'),
                           ),
                           // Botão para abrir o diálogo de seleção de idioma
                           IconButton(
@@ -153,14 +160,8 @@ class _PortfolioPageState extends State<PortfolioPage> {
                                   height: 80,
                                   decoration: BoxDecoration(
                                     shape: BoxShape.circle,
-                                    image: const DecorationImage(
-                                      image: AssetImage('web/icons/2891052.jpeg'),
-                                      fit: BoxFit.cover,
-                                    ),
-                                    border: Border.all(
-                                      color: Colors.white,
-                                      width: 2.0,
-                                    ),
+                                    image: const DecorationImage(image: AssetImage('web/icons/2891052.jpeg'), fit: BoxFit.cover),
+                                    border: Border.all(color: Colors.white, width: 2.0),
                                   ),
                                 ),
                               ),

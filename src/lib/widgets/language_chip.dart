@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class LanguageChip extends StatelessWidget {
   final String language;
   final String level;
-  
+
   const LanguageChip({super.key, required this.language, required this.level});
 
   @override
@@ -20,20 +20,10 @@ class LanguageChip extends StatelessWidget {
         children: [
           Text(
             language,
-            style: TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.bold,
-              color: primaryColor,
-            ),
+            style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold, color: primaryColor),
           ),
           const SizedBox(height: 4),
-          Text(
-            level,
-            style: TextStyle(
-              fontSize: 12,
-              color: primaryColor.withValues(alpha: 0.8),
-            ),
-          ),
+          Text(level, style: TextStyle(fontSize: 12, color: primaryColor.withValues(alpha: 0.8))),
         ],
       ),
     );

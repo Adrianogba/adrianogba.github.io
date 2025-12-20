@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../repositories/theme_repository.dart';
 import '../services/analytics_service.dart';
 
@@ -21,14 +22,12 @@ class ThemeProvider extends ChangeNotifier {
 
   void toggleTheme() {
     final previousTheme = _themeMode.toString();
-    _themeMode = _themeMode == ThemeMode.light
-        ? ThemeMode.dark
-        : ThemeMode.light;
-    
+    _themeMode = _themeMode == ThemeMode.light ? ThemeMode.dark : ThemeMode.light;
+
     // Registrar evento de mudança de tema
     final analyticsService = AnalyticsService();
     analyticsService.logThemeChange(previousTheme, _themeMode.toString());
-    
+
     notifyListeners();
   }
 

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class SkillChip extends StatelessWidget {
   final String label;
-  
+
   const SkillChip({super.key, required this.label});
 
   @override
@@ -18,19 +18,9 @@ class SkillChip extends StatelessWidget {
       child: Row(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Icon(
-            Icons.check_circle_outline,
-            color: primaryColor,
-            size: 12,
-          ),
+          Icon(Icons.check_circle_outline, color: primaryColor, size: 12),
           const SizedBox(width: 4),
-          Text(
-            label,
-            style: TextStyle(
-              color: primaryColor,
-              fontSize: 12,
-            ),
-          ),
+          Text(label, style: TextStyle(color: primaryColor, fontSize: 12)),
         ],
       ),
     );

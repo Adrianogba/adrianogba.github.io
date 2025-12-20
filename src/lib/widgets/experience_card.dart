@@ -7,15 +7,8 @@ class ExperienceCard extends StatelessWidget {
   final String? companyUrl;
   final String period;
   final String description;
-  
-  const ExperienceCard({
-    super.key, 
-    required this.position, 
-    required this.company, 
-    this.companyUrl,
-    required this.period,
-    required this.description,
-  });
+
+  const ExperienceCard({super.key, required this.position, required this.company, this.companyUrl, required this.period, required this.description});
 
   @override
   Widget build(BuildContext context) {
@@ -31,49 +24,32 @@ class ExperienceCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Expanded(
-                  child: Text(
-                    position,
-                    style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
+                  child: Text(position, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 ),
                 Container(
                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: Text(
-                    period,
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-                  ),
+                  decoration: BoxDecoration(color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(4)),
+                  child: Text(period, style: TextStyle(fontSize: 12, color: Theme.of(context).colorScheme.primary)),
                 ),
               ],
             ),
             const SizedBox(height: 4),
             InkWell(
-              onTap: companyUrl != null ? () async {
-                final Uri uri = Uri.parse(companyUrl!);
-                if (await canLaunchUrl(uri)) {
-                  await launchUrl(uri, mode: LaunchMode.externalApplication);
-                }
-              } : null,
+              onTap: companyUrl != null
+                  ? () async {
+                      final Uri uri = Uri.parse(companyUrl!);
+                      if (await canLaunchUrl(uri)) {
+                        await launchUrl(uri, mode: LaunchMode.externalApplication);
+                      }
+                    }
+                  : null,
               child: Text(
                 company,
-                style: TextStyle(
-                  fontSize: 16,
-                  color: Theme.of(context).colorScheme.primary,
-                  decoration: companyUrl != null ? TextDecoration.underline : null,
-                ),
+                style: TextStyle(fontSize: 16, color: Theme.of(context).colorScheme.primary, decoration: companyUrl != null ? TextDecoration.underline : null),
               ),
             ),
             const SizedBox(height: 8),
-            Text(
-              description,
-              style: const TextStyle(height: 1.4),
-            ),
+            Text(description, style: const TextStyle(height: 1.4)),
           ],
         ),
       ),

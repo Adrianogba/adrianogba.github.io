@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../repositories/language_repository.dart';
 
 enum AppLanguage {
@@ -22,8 +23,11 @@ class LanguageProvider extends ChangeNotifier {
   }
 
   AppLanguage get currentLanguage => _currentLanguage;
+
   String get languageCode => _currentLanguage.code;
+
   String get displayName => _currentLanguage.displayName;
+
   List<AppLanguage> get availableLanguages => _repository.getAllLanguages();
 
   void setLanguage(AppLanguage language) {

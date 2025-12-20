@@ -5,7 +5,7 @@ class EducationService {
   Future<List<EducationModel>> getEducations() async {
     // Simulando uma chamada de API ou banco de dados
     await Future.delayed(const Duration(milliseconds: 300));
-    
+
     return [
       EducationModel(
         degree: 'Mestrado Profissional em Engenharia de Software',

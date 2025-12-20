@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'tech_chip.dart';
 
 class ProjectCard extends StatelessWidget {
@@ -6,14 +7,8 @@ class ProjectCard extends StatelessWidget {
   final String description;
   final List<String> technologies;
   final VoidCallback? onTap;
-  
-  const ProjectCard({
-    super.key, 
-    required this.title, 
-    required this.description,
-    required this.technologies,
-    this.onTap,
-  });
+
+  const ProjectCard({super.key, required this.title, required this.description, required this.technologies, this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -28,21 +23,11 @@ class ProjectCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                title,
-                style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
+              Text(title, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               const SizedBox(height: 8),
-              Text(
-                description,
-                style: const TextStyle(height: 1.4),
-              ),
+              Text(description, style: const TextStyle(height: 1.4)),
               const SizedBox(height: 12),
-              Wrap(
-                spacing: 6,
-                runSpacing: 6,
-                children: technologies.map((tech) => TechChip(label: tech)).toList(),
-              ),
+              Wrap(spacing: 6, runSpacing: 6, children: technologies.map((tech) => TechChip(label: tech)).toList()),
             ],
           ),
         ),

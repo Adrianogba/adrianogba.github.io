@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class TechChip extends StatelessWidget {
   final String label;
-  
+
   const TechChip({super.key, required this.label});
 
   @override
@@ -12,17 +12,9 @@ class TechChip extends StatelessWidget {
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(4),
-        border: Border.all(
-          color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.3),
-        ),
+        border: Border.all(color: Theme.of(context).colorScheme.secondary.withValues(alpha: 0.3)),
       ),
-      child: Text(
-        label,
-        style: TextStyle(
-          fontSize: 12,
-          color: Theme.of(context).colorScheme.secondary,
-        ),
-      ),
+      child: Text(label, style: TextStyle(fontSize: 12, color: Theme.of(context).colorScheme.secondary)),
     );
   }
 }

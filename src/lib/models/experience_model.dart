@@ -4,12 +4,6 @@ class ExperienceModel {
   final String? companyUrl;
   final String period;
   final String description;
-  
-  const ExperienceModel({
-    required this.position, 
-    required this.company, 
-    this.companyUrl,
-    required this.period,
-    required this.description,
-  });
+
+  const ExperienceModel({required this.position, required this.company, this.companyUrl, required this.period, required this.description});
 }

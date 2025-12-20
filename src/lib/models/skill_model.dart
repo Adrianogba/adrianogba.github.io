@@ -4,12 +4,7 @@ class SkillModel {
   final String? description;
   final String category; // Ex: 'Linguagens de Programação', 'Frameworks', 'Ferramentas', etc.
 
-  SkillModel({
-    required this.name,
-    required this.proficiency,
-    required this.category,
-    this.description,
-  });
+  SkillModel({required this.name, required this.proficiency, required this.category, this.description});
 
   /// Retorna o nível de proficiência em formato de texto
   String get proficiencyLevel {

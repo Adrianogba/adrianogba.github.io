@@ -9,10 +9,10 @@ class PortfolioItemCard extends StatelessWidget {
   final String description;
   final String? url;
   final bool isPublication;
-  
+
   const PortfolioItemCard({
-    super.key, 
-    required this.title, 
+    super.key,
+    required this.title,
     required this.subtitle,
     this.subtitleUrl,
     required this.period,
@@ -36,16 +36,18 @@ class PortfolioItemCard extends StatelessWidget {
               children: [
                 Expanded(
                   child: InkWell(
-                    onTap: url != null ? () async {
-                      final Uri uri = Uri.parse(url!);
-                      if (await canLaunchUrl(uri)) {
-                        await launchUrl(uri, mode: LaunchMode.externalApplication);
-                      }
-                    } : null,
+                    onTap: url != null
+                        ? () async {
+                            final Uri uri = Uri.parse(url!);
+                            if (await canLaunchUrl(uri)) {
+                              await launchUrl(uri, mode: LaunchMode.externalApplication);
+                            }
+                          }
+                        : null,
                     child: Text(
                       title,
                       style: TextStyle(
-                        fontSize: 18, 
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
                         color: url != null ? Theme.of(context).colorScheme.primary : null,
                         decoration: url != null ? TextDecoration.underline : null,
@@ -53,31 +55,25 @@ class PortfolioItemCard extends StatelessWidget {
                     ),
                   ),
                 ),
-                period != null ?
-                Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1),
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  child: Text(
-                    period!,
-                    style: TextStyle(
-                      fontSize: 12,
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-                  ),
-                ) : Center(),
+                period != null
+                    ? Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                        decoration: BoxDecoration(color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.1), borderRadius: BorderRadius.circular(4)),
+                        child: Text(period!, style: TextStyle(fontSize: 12, color: Theme.of(context).colorScheme.primary)),
+                      )
+                    : Center(),
               ],
             ),
             const SizedBox(height: 4),
             InkWell(
-              onTap: subtitleUrl != null ? () async {
-                final Uri uri = Uri.parse(subtitleUrl!);
-                if (await canLaunchUrl(uri)) {
-                  await launchUrl(uri, mode: LaunchMode.externalApplication);
-                }
-              } : null,
+              onTap: subtitleUrl != null
+                  ? () async {
+                      final Uri uri = Uri.parse(subtitleUrl!);
+                      if (await canLaunchUrl(uri)) {
+                        await launchUrl(uri, mode: LaunchMode.externalApplication);
+                      }
+                    }
+                  : null,
               child: Text(
                 subtitle,
                 style: TextStyle(
@@ -89,10 +85,7 @@ class PortfolioItemCard extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 8),
-            SelectableText(
-              description,
-              style: const TextStyle(height: 1.4),
-            ),
+            SelectableText(description, style: const TextStyle(height: 1.4)),
           ],
         ),
       ),

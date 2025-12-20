@@ -7,11 +7,5 @@ class ContactModel {
   final IconData icon;
   final Color? color;
 
-  ContactModel({
-    required this.label,
-    required this.value,
-    required this.icon,
-    this.url,
-    this.color,
-  });
+  ContactModel({required this.label, required this.value, required this.icon, this.url, this.color});
 }
