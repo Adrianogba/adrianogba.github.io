@@ -1,4 +1,5 @@
 export 'contact_item.dart';
+export 'frosted_glass_container.dart';
 export 'language_chip.dart';
 export 'language_dialog.dart';
 export 'portfolio_item_card.dart';

@@ -94,15 +94,20 @@ class _PortfolioPageState extends State<PortfolioPage> {
     final strings = AppLocalizations(languageProvider.currentLanguage);
     final isDarkMode = themeProvider.isDarkMode;
 
+    // Em telas largas sobra espaço nas laterais, então o botão de voltar ao topo
+    // fica na lateral direita; em telas estreitas ele sobe para cima da barra
+    // de contatos.
+    final isWideScreen = MediaQuery.sizeOf(context).width >= 1000;
+
     return Scaffold(
-      floatingActionButton: _showBackToTopButton
+      floatingActionButton: _showBackToTopButton && !isWideScreen
           ? Padding(
               // Ajustar posição do botão para não sobrepor a barra flutuante
               padding: const EdgeInsets.only(bottom: 80),
               child: FloatingActionButton(
                 onPressed: _scrollToTop,
                 mini: true,
-                tooltip: AppLocalizations(Provider.of<LanguageProvider>(context).currentLanguage).get('backToTop'),
+                tooltip: strings.get('backToTop'),
                 child: const Icon(Icons.arrow_upward),
               ),
             )
@@ -256,22 +261,14 @@ class _PortfolioPageState extends State<PortfolioPage> {
                     ],
                   ),
                 ),
-          // Barra flutuante na parte inferior com estilo de vidro fosco
+          // Barra flutuante na parte inferior com fundo de vidro fosco
           Positioned(
             left: 0,
             right: 0,
             bottom: 16,
             child: Center(
-              child: Container(
-                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 10),
-                decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.surface.withValues(alpha: 0.8),
-                  borderRadius: BorderRadius.circular(30),
-                  boxShadow: [BoxShadow(color: Colors.black.withValues(alpha: 0.3), blurRadius: 15, spreadRadius: 2)],
-                  border: Border.all(color: Theme.of(context).colorScheme.primary.withValues(alpha: 0.2), width: 1),
-                  // Efeito de vidro fosco
-                  backgroundBlendMode: BlendMode.srcOver,
-                ),
+              child: FrostedGlassContainer(
+                margin: const EdgeInsets.symmetric(horizontal: 16),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
@@ -279,7 +276,7 @@ class _PortfolioPageState extends State<PortfolioPage> {
                     Padding(
                       padding: const EdgeInsets.only(bottom: 8),
                       child: Text(
-                        "Contato:",
+                        '${strings.get('contact')}:',
                         style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Theme.of(context).colorScheme.primary),
                       ),
                     ),
@@ -299,6 +296,22 @@ class _PortfolioPageState extends State<PortfolioPage> {
               ),
             ),
           ),
+          // Em telas largas o botão de voltar ao topo fica centralizado na
+          // lateral direita, longe da barra de contatos.
+          if (_showBackToTopButton && isWideScreen)
+            Positioned(
+              right: 24,
+              top: 0,
+              bottom: 0,
+              child: Center(
+                child: FloatingActionButton(
+                  onPressed: _scrollToTop,
+                  mini: true,
+                  tooltip: strings.get('backToTop'),
+                  child: const Icon(Icons.arrow_upward),
+                ),
+              ),
+            ),
         ],
       ),
     );

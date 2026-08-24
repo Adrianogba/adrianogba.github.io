@@ -32,7 +32,7 @@ class ExperienceService {
         companyUrl: 'https://www.korporate.com.br/',
         period: '2026 - Presente',
         description:
-            'Desenvolvimento de aplicações de multibenefícios, serviços de backend e painéis administrativos. Atuação no Orquestrador, solução que recebe e automatiza transações e ações, distribuindo o volume de dados entre as APIs integradas.',
+            'Desenvolvimento de apps de multibenefícios, serviços de backend, orquestrador para automatizar transações e ações, distribuindo o volume de dados entre as APIs integradas.',
       ),
       ExperienceModel(
         position: 'Desenvolvedor Full Stack',
@@ -86,7 +86,7 @@ class ExperienceService {
         companyUrl: 'https://www.korporate.com.br/',
         period: '2026 - Present',
         description:
-            'Development of multi-benefit applications, backend services and administrative dashboards. Work on the Orquestrador, a solution that receives and automates transactions and actions, distributing the data volume across the integrated APIs.',
+            'Development of multi-benefit apps, backend services and an orchestrator to automate transactions and actions, distributing the data volume across the integrated APIs.',
       ),
       ExperienceModel(
         position: 'Full Stack Developer',
@@ -140,7 +140,7 @@ class ExperienceService {
         companyUrl: 'https://www.korporate.com.br/',
         period: '2026 - Presente',
         description:
-            'Desarrollo de aplicaciones de multibeneficios, servicios de backend y paneles administrativos. Participación en el Orquestrador, solución que recibe y automatiza transacciones y acciones, distribuyendo el volumen de datos entre las APIs integradas.',
+            'Desarrollo de apps de multibeneficios, servicios de backend y un orquestador para automatizar transacciones y acciones, distribuyendo el volumen de datos entre las APIs integradas.',
       ),
       ExperienceModel(
         position: 'Desarrollador Full Stack',
@@ -194,7 +194,7 @@ class ExperienceService {
         companyUrl: 'https://www.korporate.com.br/',
         period: '2026 - Heute',
         description:
-            'Entwicklung von Multi-Benefit-Anwendungen, Backend-Diensten und Administrationsoberflächen. Mitarbeit am Orquestrador, einer Lösung, die Transaktionen und Aktionen empfängt und automatisiert und das Datenvolumen auf die integrierten APIs verteilt.',
+            'Entwicklung von Multi-Benefit-Apps, Backend-Diensten und einem Orchestrator zur Automatisierung von Transaktionen und Aktionen, der das Datenvolumen auf die integrierten APIs verteilt.',
       ),
       ExperienceModel(
         position: 'Full-Stack-Entwickler',
