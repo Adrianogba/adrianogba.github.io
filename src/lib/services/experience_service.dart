@@ -28,6 +28,14 @@ class ExperienceService {
     return [
       ExperienceModel(
         position: 'Desenvolvedor Full Stack',
+        company: 'Korporate',
+        companyUrl: 'https://www.korporate.com.br/',
+        period: '2026 - Presente',
+        description:
+            'Desenvolvimento de aplicações de multibenefícios, serviços de backend e painéis administrativos. Atuação no Orquestrador, solução que recebe e automatiza transações e ações, distribuindo o volume de dados entre as APIs integradas.',
+      ),
+      ExperienceModel(
+        position: 'Desenvolvedor Full Stack',
         company: 'Núcleo de Excelência em Tecnologias Sociais - NEES',
         companyUrl: 'https://www.nees.ufal.br/',
         period: '2025 - Presente',
@@ -72,6 +80,14 @@ class ExperienceService {
   /// Retorna experiências em inglês
   List<ExperienceModel> _getEnglishExperiences() {
     return [
+      ExperienceModel(
+        position: 'Full Stack Developer',
+        company: 'Korporate',
+        companyUrl: 'https://www.korporate.com.br/',
+        period: '2026 - Present',
+        description:
+            'Development of multi-benefit applications, backend services and administrative dashboards. Work on the Orquestrador, a solution that receives and automates transactions and actions, distributing the data volume across the integrated APIs.',
+      ),
       ExperienceModel(
         position: 'Full Stack Developer',
         company: 'Center of Excellence in Social Technologies - NEES',
@@ -120,6 +136,14 @@ class ExperienceService {
     return [
       ExperienceModel(
         position: 'Desarrollador Full Stack',
+        company: 'Korporate',
+        companyUrl: 'https://www.korporate.com.br/',
+        period: '2026 - Presente',
+        description:
+            'Desarrollo de aplicaciones de multibeneficios, servicios de backend y paneles administrativos. Participación en el Orquestrador, solución que recibe y automatiza transacciones y acciones, distribuyendo el volumen de datos entre las APIs integradas.',
+      ),
+      ExperienceModel(
+        position: 'Desarrollador Full Stack',
         company: 'Núcleo de Excelencia en Tecnologías Sociales - NEES',
         companyUrl: 'https://www.nees.ufal.br/',
         period: '2025 - Presente',
@@ -164,6 +188,14 @@ class ExperienceService {
   /// Retorna experiências em alemão
   List<ExperienceModel> _getGermanExperiences() {
     return [
+      ExperienceModel(
+        position: 'Full-Stack-Entwickler',
+        company: 'Korporate',
+        companyUrl: 'https://www.korporate.com.br/',
+        period: '2026 - Heute',
+        description:
+            'Entwicklung von Multi-Benefit-Anwendungen, Backend-Diensten und Administrationsoberflächen. Mitarbeit am Orquestrador, einer Lösung, die Transaktionen und Aktionen empfängt und automatisiert und das Datenvolumen auf die integrierten APIs verteilt.',
+      ),
       ExperienceModel(
         position: 'Full-Stack-Entwickler',
         company: 'Exzellenzzentrum für Sozialtechnologien - NEES',

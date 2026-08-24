@@ -34,7 +34,7 @@ class SocialButton extends StatelessWidget {
           decoration: BoxDecoration(color: buttonColor.withValues(alpha: 0.1), shape: BoxShape.circle),
           child: Padding(
             padding: const EdgeInsets.all(12.0),
-            child: FaIcon(icon, color: buttonColor, size: 20),
+            child: FaIcon(FaIconData(icon), color: buttonColor, size: 20),
           ),
         ),
       ),

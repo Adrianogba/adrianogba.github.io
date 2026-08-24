@@ -15,11 +15,11 @@ class ContactService {
         label: 'LinkedIn',
         value: 'linkedin.com/in/adrianogba/',
         url: 'https://linkedin.com/in/adrianogba/',
-        icon: FontAwesomeIcons.linkedin,
+        icon: FontAwesomeIcons.linkedin.data,
         color: Colors.blue.shade800,
       ),
-      ContactModel(label: 'GitHub', value: 'github.com/adrianogba', url: 'https://github.com/adrianogba', icon: FontAwesomeIcons.github, color: Colors.black),
-      ContactModel(label: 'WhatsApp', value: '+55 83 99612 4792', url: 'https://wa.me/5583996124792', icon: FontAwesomeIcons.whatsapp, color: Colors.green),
+      ContactModel(label: 'GitHub', value: 'github.com/adrianogba', url: 'https://github.com/adrianogba', icon: FontAwesomeIcons.github.data, color: Colors.black),
+      ContactModel(label: 'WhatsApp', value: '+55 83 99612 4792', url: 'https://wa.me/5583996124792', icon: FontAwesomeIcons.whatsapp.data, color: Colors.green),
     ];
   }
 }
