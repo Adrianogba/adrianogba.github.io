@@ -10,9 +10,11 @@ Este é um site de portfólio profissional desenvolvido com Flutter Web. O site 
 
 ## ✨ Funcionalidades
 
+- **Duas Abas**: Portfólio (aplicativos e bibliotecas publicadas) e Currículo, com o Portfólio como aba inicial
 - **Design Responsivo**: Layout adaptável para diferentes tamanhos de tela
 - **Tema Claro/Escuro**: Suporte a temas claro e escuro
-- **Seções Organizadas**: Perfil, Sobre Mim, Habilidades, Educação, Projetos e Contato
+- **Quatro Idiomas**: Português, inglês, espanhol e alemão
+- **Seções Organizadas**: Perfil, Sobre Mim, Habilidades, Experiência, Educação, Publicações e Contato
 - **Links Interativos**: Botões de redes sociais e contato funcionais
 - **Componentes Reutilizáveis**: Arquitetura modular com widgets personalizados
 - **Suporte a AdMob**: Inclui arquivo app-ads.txt para conformidade com AdMob
@@ -124,6 +126,26 @@ Para personalizar o site para suas necessidades:
 3. Atualize as seções de habilidades, educação e projetos
 4. Personalize as cores e temas conforme necessário
 5. Adicione sua própria foto de perfil
+
+## 🔒 Políticas de Privacidade dos Aplicativos
+
+As políticas de privacidade dos aplicativos são páginas HTML estáticas servidas por este site, em
+`src/web/privacidade/<app>/index.html`. São páginas separadas do app Flutter de propósito: o conteúdo
+precisa ser legível para os revisores e robôs das lojas, que não executam a renderização em canvas do
+Flutter Web.
+
+| Aplicativo | Link para usar na loja |
+|---|---|
+| Eleições e Políticos Brasil | <https://adrianogba.is-a.dev/privacidade/eleicoes/> |
+
+Para adicionar a política de um app novo:
+
+1. Copie `src/privacidade_template.html` para `src/web/privacidade/<app>/index.html` e preencha os
+   trechos em maiúsculas. O modelo fica fora de `web/` justamente para não ir ao ar.
+2. Rode `flutter build web` e publique: a página passa a responder em
+   `https://adrianogba.is-a.dev/privacidade/<app>/`.
+3. Informe esse link na ficha da loja e, ao listar o app no portfólio, passe-o em
+   `privacyPolicyUrl` no `AppProjectService` — o card ganha o botão "Política de Privacidade".
 
 ## 📱 Suporte a AdMob
 

@@ -1,0 +1,63 @@
+<!--
+  Modelo de política de privacidade.
+
+  Não é publicado: este arquivo fica fora de web/ de propósito. Para criar a
+  política de um app novo, copie-o para web/privacidade/<app>/index.html,
+  preencha os trechos em MAIÚSCULAS e apague as seções que não se aplicam.
+  Ele vai ao ar em https://adrianogba.is-a.dev/privacidade/<app>/ no próximo
+  build, e esse é o link para informar na loja.
+
+  É HTML estático, e não uma tela do app Flutter, porque os revisores e robôs
+  das lojas precisam ler o texto: o Flutter Web desenha tudo em canvas e as
+  rotas internas dariam 404 no GitHub Pages.
+-->
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de Privacidade — NOME DO APP</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 720px; margin: 0 auto; padding: 24px 16px; line-height: 1.6; color: #1a1a2e; background: #fff; }
+  h1 { font-size: 1.6rem; } h2 { font-size: 1.15rem; margin-top: 2rem; }
+  @media (prefers-color-scheme: dark) { body { color: #e5e7eb; background: #0f1724; } a { color: #4ade80; } }
+</style>
+</head>
+<body>
+<h1>Política de Privacidade</h1>
+<p><strong>NOME DO APP</strong> (PLATAFORMAS) — desenvolvido por Adriano Pontes.<br>
+Última atualização: DIA de MÊS de ANO.</p>
+
+<p>RESUMO DO QUE O APP FAZ. Diga aqui, em uma frase, se há cadastro ou login e
+quais dados pessoais o app <em>não</em> pede.</p>
+
+<h2>Dados coletados automaticamente</h2>
+<ul>
+  <li><strong>Anúncios (Google AdMob):</strong> o app exibe anúncios do Google, que podem usar o ID de
+  publicidade do aparelho e dados técnicos (modelo, sistema, idioma, endereço IP) para exibir e medir
+  anúncios. Você pode redefinir o ID ou desativar a personalização nas configurações do Android
+  (Google &gt; Anúncios). Mais em <a href="https://policies.google.com/technologies/ads">policies.google.com/technologies/ads</a>.</li>
+  <li><strong>Uso e falhas (Firebase Analytics e Crashlytics):</strong> telas abertas, eventos de uso e
+  relatórios de falhas, para entender o uso e corrigir erros.</li>
+  <li><strong>OUTRAS COLETAS:</strong> descreva aqui identificadores anônimos, servidor próprio,
+  registros técnicos etc. Apague o item se não houver.</li>
+</ul>
+
+<h2>Como os dados são usados e compartilhados</h2>
+<p>Os dados servem apenas para operar o app, corrigir erros e exibir anúncios. Não vendemos dados. Eles
+são tratados pelo Google (Firebase e AdMob) conforme a
+<a href="https://policies.google.com/privacy">Política de Privacidade do Google</a>. Toda comunicação é
+criptografada.</p>
+
+<h2>Seus direitos (LGPD)</h2>
+<p>EXPLIQUE como solicitar acesso ou exclusão. Se o app não identifica o usuário, diga que não há dados
+pessoais vinculados a uma conta e que desinstalar remove o que está no aparelho. Dúvidas ou pedidos:
+<a href="https://www.linkedin.com/in/adrianogba">linkedin.com/in/adrianogba</a>.</p>
+
+<h2>Crianças</h2>
+<p>O app não é direcionado a menores de 13 anos.</p>
+
+<h2>Alterações</h2>
+<p>Esta política pode ser atualizada; a data no topo indica a versão em vigor.</p>
+</body>
+</html>

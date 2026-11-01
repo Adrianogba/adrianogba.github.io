@@ -36,8 +36,12 @@ class MyApp extends StatelessWidget {
                 title: 'Portfólio - Adriano Pontes',
                 debugShowCheckedModeBanner: false,
                 navigatorObservers: [observer],
-                theme: themeProvider.lightTheme.copyWith(textTheme: GoogleFonts.robotoTextTheme(themeProvider.lightTheme.textTheme)),
-                darkTheme: themeProvider.darkTheme.copyWith(textTheme: GoogleFonts.robotoTextTheme(themeProvider.darkTheme.textTheme)),
+                // Aplicamos a fonte pelo nome da família em vez de
+                // GoogleFonts.robotoTextTheme(): a partir do google_fonts 9 ele
+                // devolve o TextTheme do pacote material_ui, que não encaixa no
+                // ThemeData do Flutter. O TextStyle continua sendo o mesmo.
+                theme: themeProvider.lightTheme.copyWith(textTheme: themeProvider.lightTheme.textTheme.apply(fontFamily: GoogleFonts.roboto().fontFamily)),
+                darkTheme: themeProvider.darkTheme.copyWith(textTheme: themeProvider.darkTheme.textTheme.apply(fontFamily: GoogleFonts.roboto().fontFamily)),
                 themeMode: themeProvider.themeMode,
                 home: const PortfolioPage(),
               );

@@ -1,6 +1,9 @@
+export 'app_project_model.dart';
 export 'contact_model.dart';
 export 'education_model.dart';
 export 'experience_model.dart';
+export 'lib_project_model.dart';
+export 'profile_link_model.dart';
 export 'project_model.dart';
 export 'publication_model.dart';
 export 'skill_model.dart';

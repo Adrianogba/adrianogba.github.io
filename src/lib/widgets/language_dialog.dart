@@ -1,4 +1,5 @@
 import 'package:country_flags/country_flags.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -6,89 +7,63 @@ import '../localization/app_localizations.dart';
 import '../providers/language_provider.dart';
 import '../services/analytics_service.dart';
 
+/// Seleção de idioma no estilo iOS: uma ação por idioma, com a bandeira e um
+/// check no que está ativo.
 class LanguageDialog extends StatelessWidget {
   const LanguageDialog({super.key});
+
+  static const Map<AppLanguage, ({String rotulo, String bandeira})> _idiomas = {
+    AppLanguage.portuguese: (rotulo: 'Português', bandeira: 'pt-BR'),
+    AppLanguage.english: (rotulo: 'English', bandeira: 'en-US'),
+    AppLanguage.spanish: (rotulo: 'Español', bandeira: 'es'),
+    AppLanguage.german: (rotulo: 'Deutsch', bandeira: 'de'),
+  };
 
   @override
   Widget build(BuildContext context) {
     final languageProvider = Provider.of<LanguageProvider>(context);
     final strings = AppLocalizations(languageProvider.currentLanguage);
 
-    return AlertDialog(
-      title: Text(strings.get('selectLanguage')),
-      content: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          _buildLanguageOption(context, AppLanguage.portuguese, 'Português', Icons.language, languageProvider),
-          const SizedBox(height: 8),
-          _buildLanguageOption(context, AppLanguage.english, 'English', Icons.language, languageProvider),
-          const SizedBox(height: 8),
-          _buildLanguageOption(context, AppLanguage.spanish, 'Español', Icons.language, languageProvider),
-          const SizedBox(height: 8),
-          _buildLanguageOption(context, AppLanguage.german, 'Deutsch', Icons.language, languageProvider),
+    return CupertinoTheme(
+      data: CupertinoThemeData(brightness: Theme.of(context).brightness, primaryColor: Theme.of(context).colorScheme.primary),
+      child: CupertinoAlertDialog(
+        title: Padding(padding: const EdgeInsets.only(bottom: 4), child: Text(strings.get('selectLanguage'))),
+        actions: [
+          for (final entrada in _idiomas.entries) _OpcaoDeIdioma(language: entrada.key, rotulo: entrada.value.rotulo, bandeira: entrada.value.bandeira),
+          CupertinoDialogAction(isDefaultAction: true, onPressed: () => Navigator.of(context).pop(), child: Text(strings.get('back'))),
         ],
       ),
-      actions: [TextButton(onPressed: () => Navigator.of(context).pop(), child: Text(strings.get('back')))],
     );
   }
+}
 
-  Widget _buildLanguageOption(BuildContext context, AppLanguage language, String label, IconData icon, LanguageProvider provider) {
-    final isSelected = provider.currentLanguage == language;
-    final theme = Theme.of(context);
-    final analyticsService = AnalyticsService();
+class _OpcaoDeIdioma extends StatelessWidget {
+  final AppLanguage language;
+  final String rotulo;
+  final String bandeira;
 
-    // Definir o código do país para a bandeira
-    Widget flagWidget;
-    switch (language.code) {
-      case 'pt':
-        flagWidget = CountryFlag.fromLanguageCode('pt-BR', theme: ImageTheme(height: 24, width: 32, shape: const RoundedRectangle(8)));
-        break;
-      case 'en':
-        flagWidget = CountryFlag.fromLanguageCode('en-US', theme: ImageTheme(height: 24, width: 32, shape: const RoundedRectangle(8)));
-        break;
-      case 'es':
-        flagWidget = CountryFlag.fromLanguageCode('es', theme: ImageTheme(height: 24, width: 32, shape: const RoundedRectangle(8)));
-      case 'de':
-        flagWidget = CountryFlag.fromLanguageCode('de', theme: ImageTheme(height: 24, width: 32, shape: const RoundedRectangle(8)));
-        break;
-      default:
-        flagWidget = Icon(icon, color: isSelected ? theme.colorScheme.primary : theme.colorScheme.onSurface);
-    }
+  const _OpcaoDeIdioma({required this.language, required this.rotulo, required this.bandeira});
 
-    return InkWell(
-      onTap: () {
-        final previousLanguage = provider.currentLanguage.code;
+  @override
+  Widget build(BuildContext context) {
+    final provider = Provider.of<LanguageProvider>(context);
+    final selecionado = provider.currentLanguage == language;
+    final cor = Theme.of(context).colorScheme.primary;
+
+    return CupertinoDialogAction(
+      onPressed: () {
+        final anterior = provider.currentLanguage.code;
         provider.setLanguage(language);
-
-        // Registrar evento de mudança de idioma
-        analyticsService.logLanguageChange(previousLanguage, language.code);
-
-        // Comentado para manter o diálogo aberto após a seleção
-        // Navigator.of(context).pop();
+        AnalyticsService().logLanguageChange(anterior, language.code);
       },
-      borderRadius: BorderRadius.circular(8),
-      child: Container(
-        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
-        decoration: BoxDecoration(
-          color: isSelected ? theme.colorScheme.primary.withValues(alpha: 0.1) : null,
-          borderRadius: BorderRadius.circular(8),
-          border: Border.all(color: isSelected ? theme.colorScheme.primary : theme.colorScheme.onSurface.withValues(alpha: 0.2)),
-        ),
-        child: Row(
-          children: [
-            flagWidget,
-            const SizedBox(width: 16),
-            Text(
-              label,
-              style: TextStyle(
-                fontWeight: isSelected ? FontWeight.bold : FontWeight.normal,
-                color: isSelected ? theme.colorScheme.primary : theme.colorScheme.onSurface,
-              ),
-            ),
-            const Spacer(),
-            if (isSelected) Icon(Icons.check_circle, color: theme.colorScheme.primary),
-          ],
-        ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CountryFlag.fromLanguageCode(bandeira, theme: const ImageTheme(height: 20, width: 28, shape: RoundedRectangle(6))),
+          const SizedBox(width: 12),
+          Text(rotulo, style: TextStyle(fontWeight: selecionado ? FontWeight.w600 : FontWeight.w400)),
+          if (selecionado) ...[const SizedBox(width: 8), Icon(CupertinoIcons.check_mark_circled_solid, size: 18, color: cor)],
+        ],
       ),
     );
   }
