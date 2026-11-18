@@ -9,6 +9,7 @@ const String eleicoesPrivacyPolicyUrl = 'https://adrianogba.is-a.dev/privacidade
 /// Links fixos, iguais em todos os idiomas.
 const String _selicStoreUrl = 'https://play.google.com/store/apps/details?id=adrianogba.selic';
 const String _banricardStoreUrl = 'https://play.google.com/store/apps/details?id=br.com.sejavero.banricardmulti';
+const String _selicAppStoreUrl = 'https://apps.apple.com/app/selic-agora-taxa-cdi-e-copom/id6835103999';
 const String _banricardAppStoreUrl = 'https://apps.apple.com/br/app/banricard-multi/id6800410716';
 const String _moaiArticleUrl = 'https://dock.tech/fluid/blog/cards-and-credit/autoatendimento-em-tempos-de-pandemia/?ac=1';
 const String _selicShot = 'assets/screens/selic-agora.webp';
@@ -40,6 +41,7 @@ class AppProjectService {
         name: 'Selic Agora',
         description: 'Aplicativo para acompanhar a taxa Selic, com gráfico do histórico, seleção de intervalo de datas e explicação sobre o indicador, com dados do Banco Central. Disponível em português e inglês.',
         storeUrl: _selicStoreUrl,
+        appStoreUrl: _selicAppStoreUrl,
         screenshot: _selicShot,
       ),
       const AppProjectModel(
@@ -81,6 +83,7 @@ class AppProjectService {
         name: 'Selic Agora',
         description: 'App for following the Brazilian Selic interest rate, with a chart of its history, date range selection and an explanation of the indicator, using Central Bank data. Available in Portuguese and English.',
         storeUrl: _selicStoreUrl,
+        appStoreUrl: _selicAppStoreUrl,
         screenshot: _selicShot,
       ),
       const AppProjectModel(
@@ -122,6 +125,7 @@ class AppProjectService {
         name: 'Selic Agora',
         description: 'Aplicación para seguir la tasa Selic, con gráfico del histórico, selección de intervalo de fechas y explicación del indicador, con datos del Banco Central de Brasil. Disponible en portugués e inglés.',
         storeUrl: _selicStoreUrl,
+        appStoreUrl: _selicAppStoreUrl,
         screenshot: _selicShot,
       ),
       const AppProjectModel(
@@ -163,6 +167,7 @@ class AppProjectService {
         name: 'Selic Agora',
         description: 'App zur Verfolgung des brasilianischen Leitzinses Selic, mit Verlaufsdiagramm, Auswahl des Zeitraums und einer Erklärung des Indikators, auf Basis von Daten der Zentralbank. Verfügbar auf Portugiesisch und Englisch.',
         storeUrl: _selicStoreUrl,
+        appStoreUrl: _selicAppStoreUrl,
         screenshot: _selicShot,
       ),
       const AppProjectModel(

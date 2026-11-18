@@ -63,7 +63,7 @@ class LibProjectCard extends StatelessWidget {
                     primary: true,
                   ),
                 ProjectLinkButton(
-                  label: strings.get('sourceCode'),
+                  label: 'GitHub',
                   url: lib.repositoryUrl,
                   icon: FontAwesomeIcons.github.data,
                   linkType: 'library_repository',
