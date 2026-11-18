@@ -7,6 +7,7 @@ import 'package:provider/provider.dart';
 import 'firebase_options.dart';
 import 'providers/providers.dart';
 import 'screens/screens.dart';
+import 'widgets/theme_reveal.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -43,6 +44,9 @@ class MyApp extends StatelessWidget {
                 theme: themeProvider.lightTheme.copyWith(textTheme: themeProvider.lightTheme.textTheme.apply(fontFamily: GoogleFonts.roboto().fontFamily)),
                 darkTheme: themeProvider.darkTheme.copyWith(textTheme: themeProvider.darkTheme.textTheme.apply(fontFamily: GoogleFonts.roboto().fontFamily)),
                 themeMode: themeProvider.themeMode,
+                // Envolve o app para a troca de tema poder revelar o novo tema
+                // a partir do botão tocado.
+                builder: (context, child) => ThemeReveal(child: child!),
                 home: const PortfolioPage(),
               );
             },

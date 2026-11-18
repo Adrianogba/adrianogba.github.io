@@ -20,9 +20,12 @@ class ThemeProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  void toggleTheme() {
+  /// Alterna a partir do brilho que está na tela ([atual]), e não do modo
+  /// salvo: com ThemeMode.system e o sistema escuro, trocar "system" por
+  /// "dark" não mudaria nada e o primeiro clique pareceria não funcionar.
+  void toggleTheme(Brightness atual) {
     final previousTheme = _themeMode.toString();
-    _themeMode = _themeMode == ThemeMode.light ? ThemeMode.dark : ThemeMode.light;
+    _themeMode = atual == Brightness.dark ? ThemeMode.light : ThemeMode.dark;
 
     // Registrar evento de mudança de tema
     final analyticsService = AnalyticsService();

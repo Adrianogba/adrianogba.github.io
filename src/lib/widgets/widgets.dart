@@ -15,3 +15,4 @@ export 'section_title.dart';
 export 'skill_chip.dart';
 export 'social_button.dart';
 export 'tech_chip.dart';
+export 'theme_reveal.dart';

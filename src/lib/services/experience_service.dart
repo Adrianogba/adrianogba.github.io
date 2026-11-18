@@ -3,13 +3,10 @@ import '../providers/language_provider.dart';
 
 class ExperienceService {
   /// Retorna uma lista de experiências profissionais
-  Future<List<ExperienceModel>> getExperiences() async {
+  Future<List<ExperienceModel>> getExperiences(AppLanguage currentLanguage) async {
     // Simulando uma chamada de API ou banco de dados
     await Future.delayed(const Duration(milliseconds: 300));
 
-    // Obter o idioma atual
-    final languageProvider = LanguageProvider();
-    final currentLanguage = languageProvider.currentLanguage;
 
     // Retornar as experiências de acordo com o idioma
     if (currentLanguage == AppLanguage.german) {

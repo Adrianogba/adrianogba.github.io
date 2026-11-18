@@ -18,12 +18,9 @@ const String _voluntarioSiteUrl = 'https://sites.google.com/view/mpes-2024-2-g3/
 
 class AppProjectService {
   /// Retorna os aplicativos do portfólio no idioma atual.
-  Future<List<AppProjectModel>> getApps() async {
+  Future<List<AppProjectModel>> getApps(AppLanguage currentLanguage) async {
     // Simulando uma chamada de API ou banco de dados
     await Future.delayed(const Duration(milliseconds: 300));
-
-    final languageProvider = LanguageProvider();
-    final currentLanguage = languageProvider.currentLanguage;
 
     if (currentLanguage == AppLanguage.german) {
       return _getGermanApps();
@@ -53,17 +50,17 @@ class AppProjectService {
         screenshot: _banricardShot,
       ),
       const AppProjectModel(
-        name: 'CheckGo — Autoatendimento para cartões private label',
+        name: 'CheckGo: Autoatendimento para cartões private label',
         description: 'Aplicativo de totem de autoatendimento com pagamento de faturas via PIX e cartão de débito, consulta de saldo e limite de crédito, gestão do cartão e de parcelamentos, contratação de seguros, onboarding digital, troca de senha e quitação de dívidas.',
       ),
       const AppProjectModel(
-        name: 'MOAI — Autoatendimento para cartões private label',
+        name: 'MOAI: Autoatendimento para cartões private label',
         description: 'Aplicativo de totem de autoatendimento com pagamento de faturas por cartão de débito, quitação e renegociação de dívidas, onboarding de clientes, reconhecimento facial e carrossel de imagens promocionais para publicidade na loja. Ampliou a autonomia do cliente, agilizou os serviços financeiros e criou mais um canal para campanhas de marketing.',
         websiteUrl: _moaiArticleUrl,
         websiteLabel: 'Artigo',
       ),
       const AppProjectModel(
-        name: 'MOAI — Autoatendimento para pedidos de lanches',
+        name: 'MOAI: Autoatendimento para pedidos de lanches',
         description: 'Aplicativo de totem de autoatendimento para o varejo, em que o próprio cliente navega pelos produtos, monta o pedido e conclui a compra por uma interface sensível ao toque.',
         websiteUrl: _moaiArticleUrl,
         websiteLabel: 'Artigo',
@@ -94,17 +91,17 @@ class AppProjectService {
         screenshot: _banricardShot,
       ),
       const AppProjectModel(
-        name: 'CheckGo — Self-checkout app for private label credit cards',
+        name: 'CheckGo: Self-checkout app for private label credit cards',
         description: 'Self-service kiosk application featuring bill payments via PIX and debit card, balance and credit limit inquiries, card and installment plan management, insurance enrollment, digital onboarding, password changes and debt settlement.',
       ),
       const AppProjectModel(
-        name: 'MOAI — Self-checkout app for private label credit cards',
+        name: 'MOAI: Self-checkout app for private label credit cards',
         description: 'Self-service kiosk application featuring debit card bill payments, debt settlement and renegotiation, customer onboarding, facial recognition and promotional image carousels for in-store advertising. Enhanced customer autonomy while streamlining financial services and providing an additional channel for marketing campaigns.',
         websiteUrl: _moaiArticleUrl,
         websiteLabel: 'Article',
       ),
       const AppProjectModel(
-        name: 'MOAI — Self-checkout app for food ordering',
+        name: 'MOAI: Self-checkout app for food ordering',
         description: 'Self-checkout kiosk application for retail environments, enabling customers to independently place orders, browse products and complete purchases through an interactive touchscreen interface.',
         websiteUrl: _moaiArticleUrl,
         websiteLabel: 'Article',
@@ -135,17 +132,17 @@ class AppProjectService {
         screenshot: _banricardShot,
       ),
       const AppProjectModel(
-        name: 'CheckGo — Autoservicio para tarjetas private label',
+        name: 'CheckGo: Autoservicio para tarjetas private label',
         description: 'Aplicación de quiosco de autoservicio con pago de facturas por PIX y tarjeta de débito, consulta de saldo y límite de crédito, gestión de la tarjeta y de las cuotas, contratación de seguros, onboarding digital, cambio de contraseña y liquidación de deudas.',
       ),
       const AppProjectModel(
-        name: 'MOAI — Autoservicio para tarjetas private label',
+        name: 'MOAI: Autoservicio para tarjetas private label',
         description: 'Aplicación de quiosco de autoservicio con pago de facturas con tarjeta de débito, liquidación y renegociación de deudas, onboarding de clientes, reconocimiento facial y carrusel de imágenes promocionales para publicidad en la tienda. Amplió la autonomía del cliente, agilizó los servicios financieros y creó un canal adicional para campañas de marketing.',
         websiteUrl: _moaiArticleUrl,
         websiteLabel: 'Artículo',
       ),
       const AppProjectModel(
-        name: 'MOAI — Autoservicio para pedidos de comida',
+        name: 'MOAI: Autoservicio para pedidos de comida',
         description: 'Aplicación de quiosco de autoservicio para el comercio minorista, en la que el propio cliente navega por los productos, arma el pedido y concluye la compra mediante una interfaz táctil.',
         websiteUrl: _moaiArticleUrl,
         websiteLabel: 'Artículo',
@@ -176,17 +173,17 @@ class AppProjectService {
         screenshot: _banricardShot,
       ),
       const AppProjectModel(
-        name: 'CheckGo — Selbstbedienung für Private-Label-Kreditkarten',
+        name: 'CheckGo: Selbstbedienung für Private-Label-Kreditkarten',
         description: 'Selbstbedienungs-Kioskanwendung mit Rechnungszahlung per PIX und Debitkarte, Abfrage von Guthaben und Kreditlimit, Karten- und Ratenverwaltung, Versicherungsabschluss, digitalem Onboarding, Passwortänderung und Schuldentilgung.',
       ),
       const AppProjectModel(
-        name: 'MOAI — Selbstbedienung für Private-Label-Kreditkarten',
+        name: 'MOAI: Selbstbedienung für Private-Label-Kreditkarten',
         description: 'Selbstbedienungs-Kioskanwendung mit Rechnungszahlung per Debitkarte, Schuldentilgung und -umschuldung, Kunden-Onboarding, Gesichtserkennung und Karussell mit Werbebildern für die Filiale. Erhöhte die Eigenständigkeit der Kunden, beschleunigte die Finanzdienstleistungen und schuf einen weiteren Kanal für Marketingkampagnen.',
         websiteUrl: _moaiArticleUrl,
         websiteLabel: 'Artikel',
       ),
       const AppProjectModel(
-        name: 'MOAI — Selbstbedienung für Essensbestellungen',
+        name: 'MOAI: Selbstbedienung für Essensbestellungen',
         description: 'Selbstbedienungs-Kioskanwendung für den Einzelhandel, bei der Kunden selbst durch die Produkte navigieren, ihre Bestellung zusammenstellen und den Kauf über eine Touchscreen-Oberfläche abschließen.',
         websiteUrl: _moaiArticleUrl,
         websiteLabel: 'Artikel',

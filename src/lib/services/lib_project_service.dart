@@ -29,12 +29,9 @@ const List<String> _jsTech = ['TypeScript', 'React', 'Vue', 'React Native'];
 
 class LibProjectService {
   /// Retorna as bibliotecas publicadas no idioma atual.
-  Future<List<LibProjectModel>> getLibs() async {
+  Future<List<LibProjectModel>> getLibs(AppLanguage currentLanguage) async {
     // Simulando uma chamada de API ou banco de dados
     await Future.delayed(const Duration(milliseconds: 300));
-
-    final languageProvider = LanguageProvider();
-    final currentLanguage = languageProvider.currentLanguage;
 
     if (currentLanguage == AppLanguage.german) {
       return _getGermanLibs();

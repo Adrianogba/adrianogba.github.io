@@ -13,7 +13,6 @@ class ProfileLinkService {
     ProfileLinkModel(label: 'GitHub', url: 'https://github.com/adrianogba', icon: FontAwesomeIcons.github.data, linkType: 'profile_contact'),
     ProfileLinkModel(label: 'E-mail', url: 'mailto:ampontes93@gmail.com', icon: Icons.mail_outline, linkType: 'profile_contact'),
     ProfileLinkModel(label: 'WhatsApp', url: 'https://wa.me/5583996124792', icon: FontAwesomeIcons.whatsapp.data, linkType: 'profile_contact'),
-    ProfileLinkModel(label: 'Facebook', url: 'https://facebook.com/adrianogba', icon: FontAwesomeIcons.facebookF.data, linkType: 'profile_contact'),
   ];
 
   /// Onde minhas bibliotecas são publicadas.

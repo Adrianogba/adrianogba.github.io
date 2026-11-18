@@ -3,13 +3,9 @@ import '../providers/language_provider.dart';
 
 class PublicationService {
   /// Retorna uma lista de publicações
-  Future<List<PublicationModel>> getPublications() async {
+  Future<List<PublicationModel>> getPublications(AppLanguage currentLanguage) async {
     // Simulando uma chamada de API ou banco de dados
     await Future.delayed(const Duration(milliseconds: 300));
-
-    // Obter o idioma atual
-    final languageProvider = LanguageProvider();
-    final currentLanguage = languageProvider.currentLanguage;
 
     // Retornar as publicações de acordo com o idioma
     if (currentLanguage == AppLanguage.german) {
@@ -52,8 +48,7 @@ class PublicationService {
         description: 'Estudo qualitativo sobre a perspectiva de profissionais da indústria em relação à modelagem e testes de software.',
         journal: 'V Workshop de Iniciação Científica em Sistemas de Informação',
         year: '2018',
-        url:
-            'https://www.researchgate.net/publication/327732020_Modelagem_e_testes_de_software_na_perspectiva_de_profissionais_da_industria_Um_estudo_qualitativo',
+        url: 'https://www.researchgate.net/publication/327732020_Modelagem_e_testes_de_software_na_perspectiva_de_profissionais_da_industria_Um_estudo_qualitativo',
       ),
     ];
   }

@@ -52,6 +52,14 @@ class _PortfolioPageState extends State<PortfolioPage> with SingleTickerProvider
   // Serviço de analytics
   final AnalyticsService _analyticsService = AnalyticsService();
 
+  /// Idioma do conteúdo carregado: quando o usuário troca, recarrega.
+  AppLanguage? _idiomaCarregado;
+
+  /// Aba em exibição e o sentido da última troca (1 vai para a direita, -1
+  /// para a esquerda), para o conteúdo deslizar como abas de um app.
+  int _abaExibida = 0;
+  int _sentidoTroca = 1;
+
   @override
   void initState() {
     super.initState();
@@ -71,39 +79,53 @@ class _PortfolioPageState extends State<PortfolioPage> with SingleTickerProvider
 
     // Registrar visualização da tela
     _analyticsService.logScreenView('portfolio_page');
+  }
 
-    _loadData();
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // Ouve o idioma: os textos vêm dos serviços, então trocar o idioma exige
+    // buscar o conteúdo de novo.
+    final idioma = Provider.of<LanguageProvider>(context).currentLanguage;
+    if (idioma != _idiomaCarregado) {
+      _idiomaCarregado = idioma;
+      _loadData(idioma);
+    }
   }
 
   /// Cada aba tem seu próprio conteúdo na mesma rolagem, então ao trocar de aba
   /// a página volta ao topo.
   void _onTabChanged() {
-    if (_tabController.indexIsChanging) return;
-    setState(() {});
+    final nova = _tabController.index;
+    if (nova == _abaExibida) return;
+    setState(() {
+      _sentidoTroca = nova > _abaExibida ? 1 : -1;
+      _abaExibida = nova;
+    });
     if (_scrollController.hasClients) {
       _scrollController.jumpTo(0);
     }
-    _analyticsService.logSectionView(_tabController.index == 0 ? 'tab_portfolio' : 'tab_resume');
+    _analyticsService.logSectionView(nova == 0 ? 'tab_portfolio' : 'tab_resume');
   }
 
-  Future<void> _loadData() async {
-    setState(() {
-      _isLoading = true;
-    });
+  Future<void> _loadData(AppLanguage idioma) async {
+    // O indicador de tela cheia é só para a primeira carga; numa troca de
+    // idioma o conteúdo antigo fica na tela até o novo chegar.
 
     // Carregar tudo em paralelo: em série cada serviço espera o anterior e a
     // página demora vários segundos para aparecer.
     final results = await Future.wait([
-      _publicationService.getPublications(),
-      _experienceService.getExperiences(),
-      _educationService.getEducations(),
+      _publicationService.getPublications(idioma),
+      _experienceService.getExperiences(idioma),
+      _educationService.getEducations(idioma),
       _skillService.getSkillsByCategory(),
       _contactService.getContacts(),
-      _appProjectService.getApps(),
-      _libProjectService.getLibs(),
+      _appProjectService.getApps(idioma),
+      _libProjectService.getLibs(idioma),
     ]);
 
-    if (!mounted) return;
+    // Descarta a resposta se o idioma mudou de novo enquanto carregava.
+    if (!mounted || idioma != _idiomaCarregado) return;
 
     // Atualizar estado
     setState(() {
@@ -172,23 +194,29 @@ class _PortfolioPageState extends State<PortfolioPage> with SingleTickerProvider
                         foregroundColor: GridBannerColors.foreground(isDarkMode),
                         surfaceTintColor: Colors.transparent,
                         actions: [
-                          // Botão para alternar o tema
-                          IconButton(
-                            icon: Icon(isDarkMode ? Icons.light_mode : Icons.dark_mode, color: GridBannerColors.foreground(isDarkMode)),
-                            iconSize: 26,
-                            padding: const EdgeInsets.all(12),
-                            onPressed: () => themeProvider.toggleTheme(),
-                            tooltip: isDarkMode
-                                ? AppLocalizations(Provider.of<LanguageProvider>(context).currentLanguage).get('lightMode')
-                                : AppLocalizations(Provider.of<LanguageProvider>(context).currentLanguage).get('darkMode'),
+                          // Botão para alternar o tema: o novo tema se abre em
+                          // bolha a partir do próprio botão.
+                          Builder(
+                            builder: (botaoContext) => IconButton(
+                              icon: Icon(isDarkMode ? Icons.light_mode : Icons.dark_mode, color: GridBannerColors.foreground(isDarkMode)),
+                              iconSize: 26,
+                              padding: const EdgeInsets.all(12),
+                              onPressed: () {
+                                final caixa = botaoContext.findRenderObject() as RenderBox;
+                                final centro = caixa.localToGlobal(caixa.size.center(Offset.zero));
+                                final brilho = Theme.of(context).brightness;
+                                ThemeReveal.of(context).trocar(centro, () => themeProvider.toggleTheme(brilho));
+                              },
+                              tooltip: isDarkMode ? strings.get('lightMode') : strings.get('darkMode'),
+                            ),
                           ),
                           // Botão para abrir o diálogo de seleção de idioma
                           IconButton(
                             icon: Icon(Icons.language, color: GridBannerColors.foreground(isDarkMode)),
                             iconSize: 26,
                             padding: const EdgeInsets.all(12),
-                            onPressed: () => showDialog(context: context, builder: (context) => const LanguageDialog()),
-                            tooltip: AppLocalizations(Provider.of<LanguageProvider>(context).currentLanguage).get('selectLanguage'),
+                            onPressed: () => showLanguagePicker(context),
+                            tooltip: strings.get('selectLanguage'),
                           ),
                         ],
                         // Título só aparece quando o cabeçalho encolhe.
@@ -227,36 +255,45 @@ class _PortfolioPageState extends State<PortfolioPage> with SingleTickerProvider
                         ),
                       ),
                       SliverToBoxAdapter(
-                        child: Padding(
-                          padding: const EdgeInsets.all(16.0),
-                          child: Center(
-                            // A troca de aba entra deslizando e esmaecendo.
-                            child: AnimatedSwitcher(
-                              duration: const Duration(milliseconds: 320),
-                              switchInCurve: Curves.easeOutCubic,
-                              switchOutCurve: Curves.easeInCubic,
-                              layoutBuilder: (atual, anteriores) => Stack(alignment: Alignment.topCenter, children: [...anteriores, ?atual]),
-                              transitionBuilder: (child, animation) => FadeTransition(
-                                opacity: animation,
-                                child: SlideTransition(
-                                  position: Tween<Offset>(begin: const Offset(0, 0.04), end: Offset.zero).animate(animation),
-                                  child: child,
-                                ),
-                              ),
-                              child: ConstrainedBox(
-                                // O portfólio é um mosaico e aproveita telas
-                                // largas; o currículo é texto corrido e fica
-                                // mais legível em coluna estreita.
-                                key: ValueKey<int>(_tabController.index),
-                                constraints: BoxConstraints(maxWidth: _tabController.index == 0 ? 1180 : 800),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    ...(_tabController.index == 0 ? _buildPortfolioTab(strings) : _buildResumeTab(strings)),
+                        // Recorta o conteúdo que desliza para fora da tela.
+                        child: ClipRect(
+                          child: AnimatedSwitcher(
+                            duration: const Duration(milliseconds: 320),
+                            switchInCurve: Curves.easeInOutCubic,
+                            switchOutCurve: Curves.easeInOutCubic,
+                            layoutBuilder: (atual, anteriores) => Stack(alignment: Alignment.topCenter, children: [...anteriores, ?atual]),
+                            // Como abas de um app: indo para a direita, o novo
+                            // conteúdo entra pela direita e o antigo sai pela
+                            // esquerda; voltando, o contrário.
+                            transitionBuilder: (child, animation) {
+                              final entrando = child.key == ValueKey<int>(_abaExibida);
+                              final sentido = (entrando ? _sentidoTroca : -_sentidoTroca).toDouble();
+                              return SlideTransition(
+                                position: Tween<Offset>(begin: Offset(sentido, 0), end: Offset.zero).animate(animation),
+                                child: child,
+                              );
+                            },
+                            child: SizedBox(
+                              key: ValueKey<int>(_abaExibida),
+                              width: double.infinity,
+                              child: Padding(
+                                padding: const EdgeInsets.all(16.0),
+                                child: Center(
+                                  child: ConstrainedBox(
+                                    // O portfólio é um mosaico e aproveita telas
+                                    // largas; o currículo é texto corrido e fica
+                                    // mais legível em coluna estreita.
+                                    constraints: BoxConstraints(maxWidth: _abaExibida == 0 ? 1180 : 800),
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        ...(_abaExibida == 0 ? _buildPortfolioTab(strings) : _buildResumeTab(strings)),
 
-                                    // Espaço adicional no final da página para evitar que a barra flutuante sobreponha o conteúdo
-                                    const SizedBox(height: 100),
-                                  ],
+                                        // Espaço adicional no final da página para evitar que a barra flutuante sobreponha o conteúdo
+                                        const SizedBox(height: 100),
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               ),
                             ),
